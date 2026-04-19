@@ -1,5 +1,5 @@
-[phases.install]
-cmds = ["npm install"]
+[phases.build]
+cmds = []
 
 [start]
-cmd = "serve -s . -l $PORT"
+cmd = "node server.js"

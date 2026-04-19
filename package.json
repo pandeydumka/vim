@@ -1,11 +1,11 @@
 {
   "name": "vim-dance-studio",
   "version": "1.0.0",
-  "description": "VIM Virtues In Motion Dance Studio — Yorkville IL",
+  "description": "VIM Virtues In Motion Dance Studio",
   "scripts": {
-    "start": "serve -s . -l $PORT"
+    "start": "node server.js"
   },
-  "dependencies": {
-    "serve": "^14.2.3"
+  "engines": {
+    "node": ">=18"
   }
 }
