@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "VIM Virtues In Motion Dance Studio — Yorkville IL",
   "scripts": {
-    "start": "serve . -p ${PORT:-3000} -s"
+    "start": "serve -s . -l $PORT"
   },
   "dependencies": {
     "serve": "^14.2.3"
