@@ -1,11 +1,7 @@
 {
   "name": "vim-dance-studio",
   "version": "1.0.0",
-  "description": "VIM Virtues In Motion Dance Studio",
   "scripts": {
     "start": "node server.js"
-  },
-  "engines": {
-    "node": ">=18"
   }
 }
