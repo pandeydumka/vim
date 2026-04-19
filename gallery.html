@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gallery — VIM Dance Studio Yorkville IL</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#16121a;--bg-low:#1e1a22;--bg-con:#221e26;--bg-high:#2d2831;
+  --bg-highest:#38333c;--bg-lowest:#110d15;
+  --primary:#e4b5ff;--primary-c:#50007a;--secondary:#ffb0c9;
+  --on-surface:#e9dfec;--on-var:#cec3d3;--on-primary:#4e0078;
+  --outline:#4c4451;
+  --serif:'Noto Serif',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
+*:focus{outline:none}
+
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
+.logo{font-family:var(--serif);font-size:20px;color:var(--primary);letter-spacing:0.04em;line-height:1;text-decoration:none}
+.logo small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--secondary);margin-top:3px;font-style:normal}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(233,223,236,0.6);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-links a.active{color:var(--primary);border-bottom:1px solid rgba(228,181,255,0.4);padding-bottom:2px}
+.nav-btn{background:linear-gradient(135deg,var(--primary),var(--primary-c));color:var(--on-primary);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:10px 22px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 4px 20px rgba(228,181,255,0.2);transition:filter 0.2s}
+.nav-btn:hover{filter:brightness(1.1)}
+
+.hero{padding:56px 48px 48px;position:relative;overflow:hidden;display:flex;gap:48px;align-items:flex-end;min-height:420px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 10% 80%,rgba(80,0,122,0.45) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(124,45,76,0.2) 0%,transparent 50%)}
+.hero-text{flex:3;position:relative;z-index:2}
+.back-link{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--secondary);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;opacity:0.8;transition:opacity 0.2s}
+.back-link:hover{opacity:1}
+.hero-eyebrow{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--secondary);margin-bottom:14px}
+.hero-h1{font-family:var(--serif);font-size:72px;line-height:1.0;font-weight:700;color:var(--on-surface);letter-spacing:-0.02em}
+.hero-h1 em{color:var(--primary);font-style:italic}
+.hero-desc{font-family:var(--sans);font-size:15px;color:var(--on-var);line-height:1.8;max-width:420px;margin-top:18px;font-weight:300}
+.hero-img-wrap{flex:2;position:relative;z-index:2}
+.hero-img{width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:var(--bg-high)}
+.hero-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter 0.6s}
+.hero-img:hover img{filter:grayscale(0%)}
+.quote-float{position:absolute;bottom:-20px;left:-28px;background:var(--bg-highest);padding:20px 22px;border-radius:16px;max-width:220px;border:1px solid rgba(76,68,81,0.25);backdrop-filter:blur(12px);box-shadow:0 16px 40px rgba(22,18,26,0.6)}
+.quote-float span{font-family:var(--sans);font-size:8px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--primary);display:block;margin-bottom:8px}
+.quote-float p{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--on-var);line-height:1.6}
+
+.pills{display:flex;gap:8px;padding:28px 48px;background:var(--bg-low);flex-wrap:wrap}
+.pill{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:9px 20px;border-radius:9999px;cursor:pointer;border:none;transition:all 0.25s}
+.pill.on{background:linear-gradient(135deg,var(--primary),var(--primary-c));color:var(--on-primary);box-shadow:0 4px 16px rgba(228,181,255,0.2)}
+.pill.off{background:var(--bg-high);color:var(--on-var)}
+.pill.off:hover{background:var(--bg-highest);color:var(--on-surface)}
+
+.section{padding:56px 48px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
+.sec-title{font-family:var(--serif);font-size:32px;font-weight:700;color:var(--on-surface)}
+.sec-title em{color:var(--primary);font-style:italic}
+.sec-meta{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:var(--on-var)}
+.badge{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:4px 12px;border-radius:9999px;background:rgba(228,181,255,0.12);color:var(--primary);margin-bottom:10px;border:1px solid rgba(228,181,255,0.15)}
+
+.perf-layout{display:flex;gap:14px;height:400px}
+.perf-main{flex:2;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:var(--bg-high)}
+.perf-main img{width:100%;height:100%;object-fit:cover;filter:grayscale(40%);transition:filter 0.6s,transform 0.8s}
+.perf-main:hover img{filter:grayscale(0%);transform:scale(1.04)}
+.perf-caption{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(to top,rgba(22,18,26,0.9),transparent)}
+.perf-caption p{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--primary);margin-bottom:4px}
+.perf-caption span{font-family:var(--sans);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-var)}
+.perf-side{flex:1;display:flex;flex-direction:column;gap:14px}
+.perf-sm{flex:1;border-radius:14px;overflow:hidden;cursor:pointer;background:var(--bg-high);position:relative}
+.perf-sm img{width:100%;height:100%;object-fit:cover;filter:grayscale(40%);transition:filter 0.5s,transform 0.5s}
+.perf-sm:hover img{filter:grayscale(0%);transform:scale(1.06)}
+
+.group-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.g-card{border-radius:12px;overflow:hidden;cursor:pointer;position:relative;background:var(--bg-high)}
+.g-card img{width:100%;height:180px;object-fit:cover;filter:grayscale(30%);transition:filter 0.5s,transform 0.5s;display:block}
+.g-card:hover img{filter:grayscale(0%);transform:scale(1.05)}
+.g-card.tall img{height:280px}
+.g-card .g-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(80,0,122,0.7),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:14px}
+.g-card:hover .g-overlay{opacity:1}
+.g-overlay span{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary)}
+
+.portrait-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}
+.p-card{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:var(--bg-high)}
+.p-card.offset{margin-top:56px}
+.p-card img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(80%);transition:filter 0.6s,transform 0.6s;display:block}
+.p-card:hover img{filter:grayscale(0%);transform:scale(1.04)}
+.p-reveal{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(22,18,26,0.95),transparent);opacity:0;transition:opacity 0.3s}
+.p-card:hover .p-reveal{opacity:1}
+.p-reveal p{font-family:var(--serif);font-size:14px;color:var(--on-surface);margin-bottom:3px}
+.p-reveal span{font-family:var(--sans);font-size:8px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--primary)}
+
+.album-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.a-card{background:var(--bg-high);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s}
+.a-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(80,0,122,0.3)}
+.a-thumb{height:110px;overflow:hidden}
+.a-thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter 0.4s,transform 0.4s}
+.a-card:hover .a-thumb img{filter:grayscale(0%);transform:scale(1.08)}
+.a-info{padding:14px 16px}
+.a-year{font-family:var(--sans);font-size:8px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--secondary);margin-bottom:4px}
+.a-name{font-family:var(--serif);font-size:14px;color:var(--on-surface);font-weight:700;line-height:1.3}
+.a-count{font-family:var(--sans);font-size:10px;color:var(--on-var);margin-top:5px}
+
+.yt-strip{background:var(--bg-con);padding:28px 48px;display:flex;align-items:center;gap:24px}
+.yt-icon{width:50px;height:50px;background:#FF0000;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.yt-icon svg{width:22px;height:22px;fill:#fff}
+.yt-text h3{font-family:var(--serif);font-size:18px;color:var(--on-surface);margin-bottom:3px}
+.yt-text p{font-family:var(--sans);font-size:12px;color:var(--on-var)}
+.yt-btn{margin-left:auto;background:transparent;border:1px solid rgba(228,181,255,0.3);color:var(--primary);font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:11px 22px;border-radius:9999px;cursor:pointer;transition:background 0.2s,border-color 0.2s;flex-shrink:0;text-decoration:none;display:inline-block}
+.yt-btn:hover{background:rgba(228,181,255,0.08);border-color:rgba(228,181,255,0.5)}
+
+.cta-sec{background:var(--bg-low);padding:56px 48px;text-align:center}
+.cta-sec h3{font-family:var(--serif);font-size:36px;color:var(--on-surface);margin-bottom:10px}
+.cta-sec h3 em{color:var(--primary);font-style:italic}
+.cta-sec p{font-family:var(--sans);font-size:14px;color:var(--on-var);margin-bottom:28px;line-height:1.7}
+.cta-btn{background:linear-gradient(135deg,var(--primary),var(--primary-c));color:var(--on-primary);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:15px 36px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 8px 28px rgba(228,181,255,0.2);transition:filter 0.2s}
+.cta-btn:hover{filter:brightness(1.1)}
+
+footer{background:var(--bg-lowest);padding:36px 48px;border-top:1px solid rgba(76,68,81,0.12);display:flex;justify-content:space-between;align-items:center}
+footer span{font-family:var(--sans);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(233,223,236,0.25)}
+footer a{color:rgba(233,223,236,0.25);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--primary)}
+
+.divider{height:1px;background:rgba(76,68,81,0.15);margin:0 48px}
+
+.lb-overlay{display:none;position:fixed;inset:0;background:rgba(11,8,15,0.95);z-index:100;align-items:center;justify-content:center;padding:24px}
+.lb-overlay.open{display:flex}
+.lb-inner{position:relative;max-width:900px;width:100%}
+.lb-inner img{width:100%;max-height:85vh;object-fit:contain;border-radius:12px}
+.lb-close{position:absolute;top:-44px;right:0;background:none;border:none;color:var(--primary);font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;padding:8px}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(22,18,26,0.7);border:1px solid rgba(76,68,81,0.4);color:var(--on-surface);font-family:var(--sans);font-size:20px;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.lb-prev{left:-56px}.lb-next{right:-56px}
+.lb-caption{text-align:center;margin-top:14px;font-family:var(--serif);font-size:14px;font-style:italic;color:var(--on-var)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">VIM <small>Virtues In Motion</small></a>
+  <ul class="nav-links">
+    <li><a href="/#classes">Classes</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#parties">Parties</a></li>
+    <li><a href="/gallery.html" class="active">Gallery</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <button class="nav-btn" onclick="window.location='/#booking'">Book Free Trial</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <a class="back-link" href="/">← Back to Home</a>
+    <div class="hero-eyebrow">✦ Visual Archives</div>
+    <div class="hero-h1">The<br>Visual<br><em>Stage</em></div>
+    <p class="hero-desc">Where the ephemeral nature of movement is distilled into lasting form. Twenty years of competition company memories, headshots, and studio life — all in one place.</p>
+  </div>
+  <div class="hero-img-wrap">
+    <div class="hero-img">
+      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/64d5aecc-37b2-46cc-a4c3-96ac5e49fa8f/2019_VIM_Co_Groups_01w.jpg" alt="2019 VIM Competition Company Groups"/>
+    </div>
+    <div class="quote-float">
+      <span>✦ Dance Mom Love</span>
+      <p>&ldquo;They don’t just teach dance — they build confident, beautiful young women.&rdquo;</p>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER PILLS -->
+<div class="pills" id="filter-bar">
+  <button class="pill on" data-filter="all">All Moments</button>
+  <button class="pill off" data-filter="groups19">2019 Company Groups</button>
+  <button class="pill off" data-filter="heads18">2018 Headshots</button>
+  <button class="pill off" data-filter="groups18">2018 Groups</button>
+  <button class="pill off" data-filter="action18">2018 Action Shots</button>
+</div>
+
+<!-- IN MOTION FEATURE -->
+<div class="section" style="background:var(--bg)" data-section="all groups19">
+  <div class="sec-head">
+    <div>
+      <div class="badge">2019 Season</div>
+      <div class="sec-title">In <em>Motion</em></div>
+    </div>
+    <div class="sec-meta">✦ Competition Season 2019</div>
+  </div>
+  <div class="perf-layout">
+    <div class="perf-main" onclick="openLightbox(0)">
+      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c97a6cb4-da85-4759-8201-ea0987fba425/2019_VIM_Co_Groups_08w.jpg" alt="VIM 2019 Group Performance"/>
+      <div class="perf-caption">
+        <p>VIM Competition Company</p>
+        <span>2019 Group Performance · Yorkville IL</span>
+      </div>
+    </div>
+    <div class="perf-side">
+      <div class="perf-sm" onclick="openLightbox(1)">
+        <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/487d8e9a-23bf-4c85-a40e-0475a723b024/2019_VIM_Co_Groups_02w.jpg" alt="VIM 2019 Group 02"/>
+      </div>
+      <div class="perf-sm" onclick="openLightbox(2)">
+        <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/154db76d-4755-48ca-a609-47c663186183/2019_VIM_Co_Groups_03w.jpg" alt="VIM 2019 Group 03"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 2019 GROUP PHOTOS GRID -->
+<div class="section" style="background:var(--bg-low)" data-section="all groups19">
+  <div class="sec-head">
+    <div>
+      <div class="badge">2019 Competition Company</div>
+      <div class="sec-title">Group <em>Photos</em></div>
+    </div>
+    <div class="sec-meta">24 photos</div>
+  </div>
+  <div class="group-grid">
+    <div class="g-card tall" onclick="openLightbox(3)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8e0704a9-9569-4975-b8d7-e7a8aa37fd17/2019_VIM_Co_Groups_04w.jpg" alt="VIM 2019 Group 04"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(4)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/80c74388-89cb-4bcb-9fa1-2f9e23e7da3e/2019_VIM_Co_Groups_05w.jpg" alt="VIM 2019 Group 05"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(5)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/d3ca6d32-66f9-4589-a618-388c333332be/2019_VIM_Co_Groups_06w.jpg" alt="VIM 2019 Group 06"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(6)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c6105c5e-ac5c-4076-9b5d-e912e2f1bfe0/2019_VIM_Co_Groups_07w.jpg" alt="VIM 2019 Group 07"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(7)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/900b5f64-703b-4ff0-b6d5-3b8f156e0664/2019_VIM_Co_Groups_09w.jpg" alt="VIM 2019 Group 09"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(8)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e14b71fc-bd4b-44e0-b610-21f1b581137a/2019_VIM_Co_Groups_10w.jpg" alt="VIM 2019 Group 10"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(9)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9db722b8-d51b-4dce-b450-8b0e0e2d1c27/2019_VIM_Co_Groups_11w.jpg" alt="VIM 2019 Group 11"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(10)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b9ea16ac-3525-474a-be20-52778977abba/2019_VIM_Co_Groups_12w.jpg" alt="VIM 2019 Group 12"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(11)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/579cac29-139b-4d8b-ba0a-d29ec324b7d7/2019_VIM_Co_Groups_13w.jpg" alt="VIM 2019 Group 13"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(12)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b351e54c-7474-44ca-be7f-39a5c009aac4/2019_VIM_Co_Groups_14w.jpg" alt="VIM 2019 Group 14"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(13)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f4c6c43f-5984-4a64-a6c8-bedfddaeb2c8/2019_VIM_Co_Groups_15w.jpg" alt="VIM 2019 Group 15"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(14)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1a270836-4e36-4942-bf54-d110dff88f25/2019_VIM_Co_Groups_16w.jpg" alt="VIM 2019 Group 16"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PORTRAIT GRID — staggered + grayscale hover -->
+<div class="section" style="background:var(--bg-con)" data-section="all heads18">
+  <div class="sec-head">
+    <div>
+      <div class="badge">2018 Season</div>
+      <div class="sec-title">Company <em>Portraits</em></div>
+    </div>
+    <div class="sec-meta">Hover to reveal colour</div>
+  </div>
+  <div class="portrait-grid">
+    <div class="p-card" onclick="openLightbox(15)">
+      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg" alt="2018 VIM Company Headshots"/>
+      <div class="p-reveal"><p>VIM Company Dancer</p><span>2018 Headshots</span></div>
+    </div>
+    <div class="p-card offset" onclick="openLightbox(16)">
+      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg" alt="2018 VIM Company Action"/>
+      <div class="p-reveal"><p>VIM Company Dancer</p><span>2018 Action</span></div>
+    </div>
+    <div class="p-card" onclick="openLightbox(17)">
+      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg" alt="2018 VIM Company Groups"/>
+      <div class="p-reveal"><p>VIM Company Dancers</p><span>2018 Groups</span></div>
+    </div>
+    <div class="p-card offset" onclick="openLightbox(18)">
+      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg" alt="2019 VIM Competition Company"/>
+      <div class="p-reveal"><p>VIM Company Dancers</p><span>2019 Groups</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ALL ALBUMS -->
+<div class="section" style="background:var(--bg)">
+  <div class="sec-head">
+    <div class="sec-title">Browse All <em>Albums</em></div>
+    <div class="sec-meta">4 collections</div>
+  </div>
+  <div class="album-row">
+    <div class="a-card">
+      <div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg" alt="2019 Groups"/></div>
+      <div class="a-info"><div class="a-year">2019</div><div class="a-name">Competition Company Groups</div><div class="a-count">24 photos</div></div>
+    </div>
+    <div class="a-card">
+      <div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg" alt="2018 Headshots"/></div>
+      <div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Headshots</div><div class="a-count">18 photos</div></div>
+    </div>
+    <div class="a-card">
+      <div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg" alt="2018 Groups"/></div>
+      <div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Groups</div><div class="a-count">20 photos</div></div>
+    </div>
+    <div class="a-card">
+      <div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg" alt="2018 Action"/></div>
+      <div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Action Shots</div><div class="a-count">16 photos</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- YOUTUBE STRIP -->
+<div class="yt-strip">
+  <div class="yt-icon">
+    <svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8C20.7 3 19.4 3 18.8 2.9 16.2 2.8 12 2.8 12 2.8S7.8 2.8 5.2 3c-.6.1-1.9.1-3 1.2C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.2.3 4.2S1.3 19.5 2.2 20.3c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.7 12 21.7 12 21.7s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.2.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.1l8.1 3.7-8.1 3.7z"/></svg>
+  </div>
+  <div class="yt-text">
+    <h3>Watch VIM on YouTube</h3>
+    <p>Performance videos, recitals &amp; competition highlights from Yorkville</p>
+  </div>
+  <a class="yt-btn" href="https://www.youtube.com/channel/UC3xpCZ0aA6TNGE7lHhlWzrA/videos" target="_blank" rel="noopener">View Channel →</a>
+</div>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <h3>Ready to find your <em>stage?</em></h3>
+  <p>Book a free trial class and see why Yorkville families have chosen VIM since 2004.</p>
+  <button class="cta-btn" onclick="window.location='/#booking'">Book a Free Trial →</button>
+</div>
+
+<footer>
+  <span>© 2025 Virtues In Motion Dance Studio · Yorkville, IL</span>
+  <a href="/">← Back to vimdance.com</a>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLb()">Close ×</button>
+    <button class="lb-prev" onclick="lbNav(-1)">&#8592;</button>
+    <img id="lb-img" src="" alt=""/>
+    <button class="lb-next" onclick="lbNav(1)">&#8594;</button>
+    <div class="lb-caption" id="lb-cap"></div>
+  </div>
+</div>
+
+<script>
+const photos = [
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c97a6cb4-da85-4759-8201-ea0987fba425/2019_VIM_Co_Groups_08w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/487d8e9a-23bf-4c85-a40e-0475a723b024/2019_VIM_Co_Groups_02w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/154db76d-4755-48ca-a609-47c663186183/2019_VIM_Co_Groups_03w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8e0704a9-9569-4975-b8d7-e7a8aa37fd17/2019_VIM_Co_Groups_04w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/80c74388-89cb-4bcb-9fa1-2f9e23e7da3e/2019_VIM_Co_Groups_05w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/d3ca6d32-66f9-4589-a618-388c333332be/2019_VIM_Co_Groups_06w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c6105c5e-ac5c-4076-9b5d-e912e2f1bfe0/2019_VIM_Co_Groups_07w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/900b5f64-703b-4ff0-b6d5-3b8f156e0664/2019_VIM_Co_Groups_09w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e14b71fc-bd4b-44e0-b610-21f1b581137a/2019_VIM_Co_Groups_10w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9db722b8-d51b-4dce-b450-8b0e0e2d1c27/2019_VIM_Co_Groups_11w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b9ea16ac-3525-474a-be20-52778977abba/2019_VIM_Co_Groups_12w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/579cac29-139b-4d8b-ba0a-d29ec324b7d7/2019_VIM_Co_Groups_13w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b351e54c-7474-44ca-be7f-39a5c009aac4/2019_VIM_Co_Groups_14w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f4c6c43f-5984-4a64-a6c8-bedfddaeb2c8/2019_VIM_Co_Groups_15w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1a270836-4e36-4942-bf54-d110dff88f25/2019_VIM_Co_Groups_16w.jpg',cap:'2019 VIM Competition Company'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg',cap:'2018 VIM Company Headshots'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg',cap:'2018 VIM Company Action Shots'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg',cap:'2018 VIM Company Groups'},
+  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg',cap:'2019 VIM Competition Company Groups'}
+];
+let cur=0;
+function openLightbox(i){cur=i;document.getElementById('lb-img').src=photos[i].src;document.getElementById('lb-cap').textContent=photos[i].cap;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function closeLightbox(e){if(e.target===document.getElementById('lightbox'))closeLb();}
+function lbNav(d){cur=(cur+d+photos.length)%photos.length;document.getElementById('lb-img').src=photos[cur].src;document.getElementById('lb-cap').textContent=photos[cur].cap;}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);});
+
+document.querySelectorAll('.pill').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.pill').forEach(b=>{b.className='pill off';});
+    this.className='pill on';
+    const f=this.dataset.filter;
+    document.querySelectorAll('[data-section]').forEach(sec=>{
+      if(f==='all'||sec.dataset.section.includes(f)){sec.style.display='';}
+      else{sec.style.display='none';}
+    });
+  });
+});
+</script>
+</body>
+</html>
