@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VIM Staff — Meet Our Instructors | Virtues In Motion Dance Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#16121a;--bg-low:#1e1a22;--bg-con:#221e26;--bg-high:#2d2831;
+  --bg-highest:#38333c;--bg-lowest:#110d15;
+  --primary:#e4b5ff;--primary-c:#50007a;--secondary:#ffb0c9;
+  --tertiary:#f2b6cb;--sec-con:#7c2d4c;--on-sec-con:#ff9abc;
+  --on-surface:#e9dfec;--on-var:#cec3d3;--on-primary:#4e0078;
+  --outline:#4c4451;
+  --serif:'Noto Serif',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
+*:focus{outline:none}
+
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
+.logo{font-family:var(--serif);font-size:20px;color:var(--primary);letter-spacing:0.04em;line-height:1;text-decoration:none}
+.logo small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--secondary);margin-top:3px;font-style:normal}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(233,223,236,0.65);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-links a.active{color:var(--primary);border-bottom:1px solid rgba(228,181,255,0.4);padding-bottom:2px}
+.nav-btn{background:linear-gradient(135deg,var(--primary),var(--primary-c));color:var(--on-primary);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:10px 22px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 4px 20px rgba(228,181,255,0.2);transition:filter 0.2s}
+.nav-btn:hover{filter:brightness(1.1)}
+
+.hero-img{width:100%;height:320px;object-fit:cover;object-position:center 30%;display:block;filter:brightness(0.55)}
+.hero-wrap{position:relative;overflow:hidden}
+.hero-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(80,0,122,0.5) 0%,transparent 60%);z-index:1}
+.hero-text{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:40px 48px 36px;background:linear-gradient(to top,rgba(22,18,26,0.95),transparent)}
+.back-link{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--secondary);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;opacity:0.8}
+.back-link:hover{opacity:1}
+.hero-eyebrow{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+.hero-h1{font-family:var(--serif);font-size:56px;font-weight:700;color:var(--on-surface);line-height:1.0;letter-spacing:-0.01em}
+.hero-h1 em{color:var(--primary);font-style:italic}
+.hero-desc{font-family:var(--sans);font-size:14px;color:var(--on-var);max-width:600px;margin-top:12px;line-height:1.8;font-weight:300}
+
+.section{padding:60px 48px}
+.sec-head{margin-bottom:36px}
+.sec-eyebrow{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:0.28em;text-transform:uppercase;color:var(--secondary);margin-bottom:8px}
+.sec-title{font-family:var(--serif);font-size:32px;font-weight:700;color:var(--on-surface);line-height:1.1}
+.sec-title em{color:var(--primary);font-style:italic}
+.sec-desc{font-family:var(--sans);font-size:14px;color:var(--on-var);margin-top:10px;max-width:580px;line-height:1.75}
+
+.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.staff-grid.cols-4{grid-template-columns:repeat(4,1fr);gap:20px}
+.staff-grid.cols-2{grid-template-columns:repeat(2,1fr);gap:24px;max-width:600px}
+
+.card{background:var(--bg-high);border-radius:16px;overflow:hidden;position:relative;transition:transform 0.25s,box-shadow 0.25s;cursor:default}
+.card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(80,0,122,0.28)}
+.card-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;filter:grayscale(20%);transition:filter 0.5s,transform 0.5s}
+.card:hover .card-photo{filter:grayscale(0%);transform:scale(1.04)}
+.card-photo-wrap{overflow:hidden;position:relative}
+.card-photo-wrap::after{content:"";position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(22,18,26,0.85),transparent);pointer-events:none}
+.card-body{padding:18px 18px 20px}
+.card-role{font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--secondary);margin-bottom:5px}
+.card-name{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--on-surface);line-height:1.2;margin-bottom:4px}
+.card-spec{font-family:var(--sans);font-size:11px;color:var(--on-var);line-height:1.5}
+.card-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:9999px;background:rgba(228,181,255,0.1);color:var(--primary);margin-top:8px;border:1px solid rgba(228,181,255,0.15)}
+
+.featured-card{background:var(--bg-high);border-radius:16px;overflow:hidden;display:flex;gap:0;position:relative;transition:transform 0.25s,box-shadow 0.25s}
+.featured-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(80,0,122,0.25)}
+.featured-photo-wrap{width:220px;flex-shrink:0;overflow:hidden;position:relative}
+.featured-photo-wrap::after{content:"";position:absolute;top:0;right:0;bottom:0;width:40%;background:linear-gradient(to right,transparent,var(--bg-high));pointer-events:none}
+.featured-photo{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(15%);transition:filter 0.5s}
+.featured-card:hover .featured-photo{filter:grayscale(0%)}
+.featured-body{padding:28px 24px;display:flex;flex-direction:column;justify-content:center}
+.featured-badge{font-family:var(--sans);font-size:8px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);background:rgba(228,181,255,0.1);border:1px solid rgba(228,181,255,0.18);padding:4px 12px;border-radius:9999px;display:inline-block;margin-bottom:12px;width:fit-content}
+.featured-name{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--on-surface);margin-bottom:4px}
+.featured-role{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--secondary);margin-bottom:10px}
+.featured-spec{font-family:var(--sans);font-size:13px;color:var(--on-var);line-height:1.6}
+
+.directors-grid{display:flex;flex-direction:column;gap:20px}
+
+.divider{height:1px;background:rgba(76,68,81,0.15);margin:0 48px}
+
+.quote-banner{background:linear-gradient(135deg,var(--primary-c) 0%,rgba(80,0,122,0.6) 100%);padding:56px 48px;text-align:center;position:relative;overflow:hidden}
+.quote-banner::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(228,181,255,0.12) 0%,transparent 60%)}
+.quote-banner blockquote{font-family:var(--serif);font-size:28px;font-style:italic;color:#fff;position:relative;max-width:700px;margin:0 auto;line-height:1.4}
+.quote-banner cite{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);display:block;margin-top:20px;font-style:normal}
+
+.bottom-img-wrap{position:relative;height:280px;overflow:hidden}
+.bottom-img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:brightness(0.4)}
+.bottom-img-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.bottom-img-text p{font-family:var(--serif);font-size:36px;font-style:italic;color:#fff;text-align:center;letter-spacing:0.02em}
+.bottom-img-text p em{color:var(--primary)}
+
+.cta-sec{background:var(--bg-low);padding:52px 48px;text-align:center}
+.cta-sec h3{font-family:var(--serif);font-size:32px;color:var(--on-surface);margin-bottom:10px}
+.cta-sec h3 em{color:var(--primary);font-style:italic}
+.cta-sec p{font-family:var(--sans);font-size:14px;color:var(--on-var);margin-bottom:28px;line-height:1.7}
+.cta-btn{background:linear-gradient(135deg,var(--primary),var(--primary-c));color:var(--on-primary);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:14px 32px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 8px 28px rgba(228,181,255,0.2);transition:filter 0.2s}
+.cta-btn:hover{filter:brightness(1.1)}
+
+footer{background:var(--bg-lowest);padding:36px 48px;border-top:1px solid rgba(76,68,81,0.12);display:flex;justify-content:space-between;align-items:center}
+footer span{font-family:var(--sans);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(233,223,236,0.25)}
+footer a{color:rgba(233,223,236,0.25);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--primary)}
+
+.admin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:500px}
+.admin-card{background:var(--bg-high);border-radius:14px;overflow:hidden;display:flex;align-items:center;gap:16px;padding:0 20px 0 0;transition:transform 0.2s}
+.admin-card:hover{transform:translateY(-3px)}
+.admin-photo{width:80px;height:80px;object-fit:cover;object-position:center top;flex-shrink:0;filter:grayscale(20%);transition:filter 0.4s}
+.admin-card:hover .admin-photo{filter:grayscale(0%)}
+.admin-name{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--on-surface);margin-bottom:3px}
+.admin-role{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--on-var)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">VIM <small>Virtues In Motion</small></a>
+  <ul class="nav-links">
+    <li><a href="/#classes">Classes</a></li>
+    <li><a href="/staff.html" class="active">About</a></li>
+    <li><a href="/#parties">Parties</a></li>
+    <li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <button class="nav-btn" onclick="window.location='/#booking'">Book Free Trial</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <img class="hero-img" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/eab7cd5a-b940-4fac-9039-2abb2fd50ac0/vim_header_about.jpg" alt="VIM Dance Studio Staff"/>
+  <div class="hero-text">
+    <a class="back-link" href="/">← Back to Home</a>
+    <div class="hero-eyebrow">✦ Yorkville's Premier Dance Studio</div>
+    <h1 class="hero-h1">Meet our <em>Instructors</em></h1>
+    <p class="hero-desc">At VIM, we believe dance is a transformative journey toward self-discovery. Our distinguished faculty of industry professionals bring the energy of the professional stage directly into the classroom — mentoring the next generation of expressive, confident artists.</p>
+  </div>
+</div>
+
+<!-- COMPANY DIRECTORS -->
+<div class="section" style="background:var(--bg)">
+  <div class="sec-head">
+    <div class="sec-eyebrow">✦ Leadership</div>
+    <div class="sec-title">Company <em>Directors</em></div>
+    <p class="sec-desc">Our directors shape the vision of VIM’s competitive program, bringing national-level choreography and training to Yorkville.</p>
+  </div>
+  <div class="directors-grid">
+    <div class="featured-card">
+      <div class="featured-photo-wrap">
+        <img class="featured-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/cd2251f1-2bc7-40cc-bc6d-2d3fb274191b/IMG_3468.jpg" alt="Leandra Groth"/>
+      </div>
+      <div class="featured-body">
+        <div class="featured-badge">VIM Company Team Director</div>
+        <div class="featured-name">Leandra Groth</div>
+        <div class="featured-role">Choreographer &amp; Instructor</div>
+        <div class="featured-spec">Leading VIM’s competitive company with passion and precision — developing dancers who compete at regional and national levels.</div>
+      </div>
+    </div>
+    <div class="featured-card">
+      <div class="featured-photo-wrap">
+        <img class="featured-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/98af29f2-3757-4be1-888f-cdf401978c0f/IMG_8644%20%282%29.jpeg" alt="Grace Jones Beebe"/>
+      </div>
+      <div class="featured-body">
+        <div class="featured-badge">VIM Company Team Director</div>
+        <div class="featured-name">Grace Jones Beebe</div>
+        <div class="featured-role">Choreographer &amp; Instructor</div>
+        <div class="featured-spec">Co-directing the VIM Company with a focus on artistry, technique, and the personal growth of every dancer in the program.</div>
+      </div>
+    </div>
+    <div class="featured-card">
+      <div class="featured-photo-wrap">
+        <img class="featured-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e6f437ef-12d3-4112-863d-a3ef2154a187/Arianne+Headshot.jpg" alt="Arianne Ramirez Bruning"/>
+      </div>
+      <div class="featured-body">
+        <div class="featured-badge">VIM Company Hip Hop Director</div>
+        <div class="featured-name">Arianne Ramirez Bruning</div>
+        <div class="featured-role">Choreographer &amp; Instructor</div>
+        <div class="featured-spec">Directing the Hip Hop arm of VIM’s competitive company with high-energy choreography and authentic street-dance technique.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- HIP HOP TEAM -->
+<div class="section" style="background:var(--bg-low)">
+  <div class="sec-head">
+    <div class="sec-eyebrow">✦ Hip Hop Faculty</div>
+    <div class="sec-title">Hip Hop <em>Team</em></div>
+    <p class="sec-desc">Industry professionals bringing authentic urban styles from the professional stage to VIM’s studio floor.</p>
+  </div>
+  <div class="staff-grid cols-4">
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/345ba6f4-469a-4c60-9954-8494cfac396c/Summer+2023+Headshot.jpeg" alt="Tea Rothier"/></div>
+      <div class="card-body">
+        <div class="card-role">Company Assistant</div>
+        <div class="card-name">Tea Rothier</div>
+        <div class="card-spec">Hip Hop Instructor</div>
+        <span class="card-tag">Hip Hop</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045293630-PA9MZ1YQAUC5ZI9XIAB6/vim_headshot_alvin_ramirez.jpg" alt="Alvin Ramirez"/></div>
+      <div class="card-body">
+        <div class="card-role">Hip Hop Instructor</div>
+        <div class="card-name">Alvin Ramirez</div>
+        <div class="card-spec">Choreographer</div>
+        <span class="card-tag">Hip Hop</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9423c3cf-26e6-4767-a14f-6cc49ec76c6b/Anthony+Lofendo.png" alt="Anthony Lofendo"/></div>
+      <div class="card-body">
+        <div class="card-role">Industry Professional</div>
+        <div class="card-name">Anthony Lofendo</div>
+        <div class="card-spec">Hip Hop Instructor &amp; Choreographer</div>
+        <span class="card-tag">Hip Hop</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/216f0fdd-4b44-44c3-ac24-83cf2790a0ea/IMG_6974.jpeg" alt="Davien Holton"/></div>
+      <div class="card-body">
+        <div class="card-role">Instructor</div>
+        <div class="card-name">Davien Holton</div>
+        <div class="card-spec">Hip Hop &amp; Improv</div>
+        <span class="card-tag">Hip Hop · Improv</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f3cffb39-0a5e-406e-808d-a40427370aa6/20240718_212804.jpg" alt="Evan Morrison"/></div>
+      <div class="card-body">
+        <div class="card-role">Hip Hop Instructor</div>
+        <div class="card-name">Evan Morrison</div>
+        <div class="card-spec">Breakdancing</div>
+        <span class="card-tag">Breakdancing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- DANCE INSTRUCTORS -->
+<div class="section" style="background:var(--bg)">
+  <div class="sec-head">
+    <div class="sec-eyebrow">✦ Dance Faculty</div>
+    <div class="sec-title">Dance <em>Instructors</em></div>
+    <p class="sec-desc">From Ballet to Ballroom, Acrobatics to Contemporary — our instructors hold advanced certifications and bring lifelong expertise to every class.</p>
+  </div>
+  <div class="staff-grid">
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1d40660e-2987-477c-ba8e-3d24d16ee64e/IMG_6356.PNG" alt="Jenna Jourdan"/></div>
+      <div class="card-body">
+        <div class="card-role">Dance Instructor</div>
+        <div class="card-name">Jenna Jourdan</div>
+        <div class="card-spec">Acro &amp; Musical Theater</div>
+        <span class="card-tag">Acro · Musical Theater</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9ca02717-34c7-498a-9426-9807cc0474d3/Zippy++headshot+1.jpg" alt="Zipporah Wilson"/></div>
+      <div class="card-body">
+        <div class="card-role">Ballet Instructor &amp; Choreographer</div>
+        <div class="card-name">Zipporah Wilson</div>
+        <div class="card-spec">Ballet, Contemporary &amp; Floorbarre</div>
+        <span class="card-tag">Ballet · Contemporary</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3178c44c-7c01-4fe0-ba12-6efff3ee5f5a/IMG_20240801_130803_490.jpg" alt="Andrea Koenig"/></div>
+      <div class="card-body">
+        <div class="card-role">Dance Instructor</div>
+        <div class="card-name">Andrea Koenig</div>
+        <div class="card-spec">Ballet, Contemporary, Jazz &amp; Pilates</div>
+        <span class="card-tag">Ballet · Jazz · Pilates</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8132a127-2bb3-449b-890b-00a6ba2e863e/IMG_0150%20%281%29.jpg" alt="Josie Sowers"/></div>
+      <div class="card-body">
+        <div class="card-role">Dance Instructor</div>
+        <div class="card-name">Josie Sowers</div>
+        <div class="card-spec">Various Styles</div>
+        <span class="card-tag">Multi-Style</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3b1ae97a-d1a8-40c4-b524-859babb111f4/IMG_7923.jpg" alt="Meg Terchin"/></div>
+      <div class="card-body">
+        <div class="card-role">Dance Instructor</div>
+        <div class="card-name">Meg Terchin</div>
+        <div class="card-spec">Ballroom</div>
+        <span class="card-tag">Ballroom</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045488164-740PIG8UMGGX58UKXE26/vim_headshot_brittany_amoroso.jpg" alt="Brittany Amoroso"/></div>
+      <div class="card-body">
+        <div class="card-role">Instructor &amp; Choreographer</div>
+        <div class="card-name">Brittany Amoroso</div>
+        <div class="card-spec">Ballet &amp; Contemporary</div>
+        <span class="card-tag">Ballet · Contemporary</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PDA PARTNERS -->
+<div class="section" style="background:var(--bg-low)">
+  <div class="sec-head">
+    <div class="sec-eyebrow">✦ PDA Partnership</div>
+    <div class="sec-title">PDA <em>Partner</em> Instructors</div>
+    <p class="sec-desc">VIM’s partnership with the Professional Dance Academy brings elite Ballet instruction to Yorkville.</p>
+  </div>
+  <div class="staff-grid">
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/377b0643-2b44-417b-9c98-a9ebf6bc823c/Screenshot+2026-02-23+170537.png" alt="Sonia Garcia"/></div>
+      <div class="card-body">
+        <div class="card-role">PDA Partner</div>
+        <div class="card-name">Sonia Garcia</div>
+        <div class="card-spec">Ballet Instructor</div>
+        <span class="card-tag">Ballet</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/2212de93-9da0-4d28-8887-bfaf4e7ff28a/Screenshot+2026-02-23+175834.png" alt="Altin Naska"/></div>
+      <div class="card-body">
+        <div class="card-role">PDA Partner</div>
+        <div class="card-name">Altin Naska</div>
+        <div class="card-spec">Ballet Instructor</div>
+        <span class="card-tag">Ballet</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/dbf098af-ba19-4239-a5f5-c6cb4270c46f/Screenshot+2026-02-23+180036.png" alt="Olena Nalyvaiko"/></div>
+      <div class="card-body">
+        <div class="card-role">PDA Partner</div>
+        <div class="card-name">Olena Nalyvaiko</div>
+        <div class="card-spec">Ballet Instructor</div>
+        <span class="card-tag">Ballet</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- QUOTE BANNER -->
+<div class="quote-banner">
+  <blockquote>“Dancers are made, not born.”</blockquote>
+  <cite>✦ The VIM Philosophy · Yorkville, IL since 2004</cite>
+</div>
+
+<!-- ADMINISTRATIVE -->
+<div class="section" style="background:var(--bg)">
+  <div class="sec-head">
+    <div class="sec-eyebrow">✦ Front Desk</div>
+    <div class="sec-title">Administrative <em>Team</em></div>
+    <p class="sec-desc">The friendly faces who keep VIM running smoothly — your first point of contact for questions, scheduling and everything in between.</p>
+  </div>
+  <div class="admin-grid">
+    <div class="admin-card">
+      <img class="admin-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/faf29cce-5470-47d2-860a-c332f3a5498a/IMG_9824.jpg" alt="Liliana Gorski"/>
+      <div>
+        <div class="admin-name">Liliana Gorski</div>
+        <div class="admin-role">Administrative Staff · Receptionist</div>
+      </div>
+    </div>
+    <div class="admin-card">
+      <img class="admin-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f777997e-e019-4c61-9120-55a07190c843/IMG_0615.jpg" alt="Tessa Kot"/>
+      <div>
+        <div class="admin-name">Tessa Kot</div>
+        <div class="admin-role">Administrative Staff · Receptionist</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM PHOTO + CTA -->
+<div class="bottom-img-wrap">
+  <img class="bottom-img" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/0b2cfeb0-9772-4fe3-9927-024ff80fd6cf/943-E25-258-56-029918-MHO_8186.JPG" alt="VIM Dancers"/>
+  <div class="bottom-img-text">
+    <p>Dancers are <em>made</em>, not born.</p>
+  </div>
+</div>
+
+<div class="cta-sec">
+  <h3>Train with the <em>best</em></h3>
+  <p>Book a free trial class and experience VIM’s world-class instruction for yourself.</p>
+  <button class="cta-btn" onclick="window.location='/#booking'">Book a Free Trial →</button>
+</div>
+
+<footer>
+  <span>© 2025 Virtues In Motion Dance Studio · Yorkville, IL</span>
+  <a href="/">← Back to Home</a>
+</footer>
+
+</body>
+</html>
