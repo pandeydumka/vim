@@ -18,7 +18,36 @@
 html{scroll-behavior:smooth}
 body{background:var(--surface);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
 *:focus{outline:none!important;box-shadow:none!important}
-.hero-dancer{position:absolute;right:-4%;top:0;bottom:0;height:100%;width:58%;object-fit:contain;object-position:right bottom;mix-blend-mode:screen;opacity:1;pointer-events:none;z-index:1;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.3) 15%,black 45%);mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.3) 15%,black 45%)}
+
+/* ── HERO — single unified background, no overlapping child elements ── */
+.hero{
+  min-height:640px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:80px 48px 80px;
+  background-color:#16121a;
+  background-image:
+    linear-gradient(to bottom, transparent 68%, #1e1a22 100%),
+    linear-gradient(to right, rgba(22,18,26,0.92) 32%, rgba(22,18,26,0.4) 58%, transparent 74%),
+    radial-gradient(ellipse at 68% 48%, rgba(80,0,122,0.65) 0%, transparent 52%),
+    url('https://raw.githubusercontent.com/pandeydumka/vim/main/images/full-body-dancer-green.png');
+  background-blend-mode: normal, normal, normal, screen;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 56% auto;
+  background-position: center, center, center, right bottom;
+  background-repeat: no-repeat;
+}
+.hero-content{position:relative;z-index:2;max-width:520px}
+.hero-eyebrow{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--secondary);margin-bottom:20px}
+.hero h1{font-family:var(--serif);font-size:60px;line-height:1.06;font-weight:700;margin-bottom:22px;color:var(--on-surface)}
+.hero h1 em{color:var(--primary);font-style:italic}
+.hero-sub{font-family:var(--sans);font-size:16px;color:var(--on-surface-var);line-height:1.8;max-width:400px;margin-bottom:40px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.hero-badge{position:absolute;bottom:36px;right:32px;z-index:3;width:110px;height:110px;border-radius:50%;border:1px solid rgba(228,181,255,0.25);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(22,18,26,0.55);backdrop-filter:blur(14px);box-shadow:0 0 32px rgba(228,181,255,0.06)}
+.hero-badge small{font-family:var(--sans);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--secondary);line-height:1.5}
+.hero-badge strong{font-family:var(--serif);font-size:15px;color:var(--on-surface);margin-top:6px;display:block}
+
+/* ── NAV ── */
 nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
 .nav-logo{display:flex;align-items:center;text-decoration:none}
 .nav-logo img{height:56px;width:auto;display:block;mix-blend-mode:screen}
@@ -27,31 +56,29 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .nav-links a:hover{color:var(--primary)}
 .nav-cta{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--on-primary);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:10px 22px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 4px 24px rgba(228,181,255,0.25);transition:filter 0.2s}
 .nav-cta:hover{filter:brightness(1.12)}
-.hero{min-height:620px;position:relative;display:flex;align-items:center;padding:80px 48px 72px;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(80,0,122,0.6) 0%,rgba(22,18,26,0) 60%),radial-gradient(ellipse at 20% 80%,rgba(124,45,76,0.3) 0%,transparent 50%),var(--surface)}
-.hero-glow{position:absolute;top:-60px;right:80px;width:300px;height:300px;background:radial-gradient(circle,rgba(228,181,255,0.08) 0%,transparent 70%);border-radius:50%}
-.hero-content{position:relative;z-index:2;max-width:520px}
-.hero-eyebrow{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--secondary);margin-bottom:20px}
-.hero h1{font-family:var(--serif);font-size:58px;line-height:1.08;font-weight:700;margin-bottom:22px;color:var(--on-surface)}
-.hero h1 em{color:var(--primary);font-style:italic}
-.hero-sub{font-family:var(--sans);font-size:16px;color:var(--on-surface-var);line-height:1.8;max-width:400px;margin-bottom:40px}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+
+/* ── BUTTONS ── */
 .btn-primary{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--on-primary);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:14px 32px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 8px 32px rgba(228,181,255,0.18);transition:filter 0.2s;text-decoration:none;display:inline-block}
 .btn-primary:hover{filter:brightness(1.1)}
 .btn-secondary{background:transparent;border:1px solid rgba(76,68,81,0.4);color:var(--on-surface);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:14px 32px;border-radius:9999px;cursor:pointer;transition:border-color 0.2s}
 .btn-secondary:hover{border-color:rgba(228,181,255,0.5);color:var(--primary)}
-.hero-badge{position:absolute;bottom:40px;right:32px;z-index:4;width:110px;height:110px;border-radius:50%;border:1px solid rgba(228,181,255,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(80,0,122,0.35);backdrop-filter:blur(12px);box-shadow:0 0 40px rgba(228,181,255,0.07)}
-.hero-badge small{font-family:var(--sans);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--secondary);line-height:1.5}
-.hero-badge strong{font-family:var(--serif);font-size:15px;color:var(--on-surface);margin-top:6px;display:block}
+.btn-outline{background:transparent;border:1px solid rgba(228,181,255,0.25);color:var(--on-surface);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:13px 26px;border-radius:9999px;cursor:pointer;transition:border-color 0.2s}
+.btn-outline:hover{border-color:rgba(228,181,255,0.6)}
+
+/* ── TRUST BAR ── */
 .trust-bar{background:var(--surface-low);display:flex;padding:0}
-.trust-item{flex:1;text-align:center;padding:18px 8px}
+.trust-item{flex:1;text-align:center;padding:20px 8px}
 .t-num{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--primary);display:block}
 .t-lbl{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-surface-var)}
+
+/* ── SECTIONS ── */
 .section{padding:72px 48px}
 .eyebrow{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--secondary);margin-bottom:12px}
 .sec-title{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--on-surface);line-height:1.12;margin-bottom:10px}
 .sec-title em{color:var(--primary);font-style:italic}
 .sec-sub{font-family:var(--sans);font-size:15px;color:var(--on-surface-var);line-height:1.8;max-width:480px;margin-bottom:40px}
+
+/* ── CLASSES ── */
 .classes-sec{background:var(--surface-low)}
 .age-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .age-card{background:var(--surface-high);border-radius:12px;padding:24px 18px;position:relative;overflow:hidden;box-shadow:0 32px 64px rgba(233,223,236,0.04);transition:transform 0.2s}
@@ -62,6 +89,8 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .age-range{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--primary);margin-bottom:12px}
 .age-styles{font-family:var(--sans);font-size:12px;color:var(--on-surface-var);line-height:1.9}
 .age-link{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);margin-top:16px;display:inline-block;border-bottom:1px solid rgba(228,181,255,0.3);padding-bottom:2px;text-decoration:none}
+
+/* ── COMPETITIVE ── */
 .competitive-sec{background:var(--surface);padding:72px 48px;display:flex;gap:48px;align-items:center;position:relative;overflow:hidden}
 .competitive-sec::before{content:"";position:absolute;top:-80px;right:-40px;width:400px;height:400px;background:radial-gradient(circle,rgba(80,0,122,0.25) 0%,transparent 65%);pointer-events:none}
 .comp-content{flex:1;position:relative;z-index:2}
@@ -70,8 +99,8 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .comp-features{list-style:none;margin:24px 0 32px;display:flex;flex-direction:column;gap:12px}
 .comp-features li{font-family:var(--sans);font-size:14px;color:var(--on-surface-var);display:flex;align-items:center;gap:12px}
 .comp-features li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--primary);flex-shrink:0}
-.btn-outline{background:transparent;border:1px solid rgba(228,181,255,0.25);color:var(--on-surface);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:13px 26px;border-radius:9999px;cursor:pointer;transition:border-color 0.2s}
-.btn-outline:hover{border-color:rgba(228,181,255,0.6)}
+
+/* ── PARTIES ── */
 .parties-sec{background:var(--surface-low);padding:72px 48px}
 .party-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .party-card{background:var(--surface-high);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;box-shadow:0 32px 64px rgba(233,223,236,0.04);position:relative;transition:transform 0.2s}
@@ -88,6 +117,8 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .party-features li::before{content:"✦";color:var(--primary);font-size:10px;flex-shrink:0;margin-top:2px}
 .party-price{font-family:var(--serif);font-size:22px;color:var(--on-surface);margin-top:16px;padding-top:16px;border-top:1px solid rgba(76,68,81,0.2)}
 .party-price small{font-family:var(--sans);font-size:12px;color:var(--on-surface-var);font-weight:400}
+
+/* ── TESTIMONIALS ── */
 .testi-sec{background:var(--surface);padding:72px 48px}
 .testi-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
 .testi-img{width:100%;height:320px;background:var(--surface-high);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 32px 64px rgba(233,223,236,0.05)}
@@ -98,6 +129,8 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .testi-quotes{display:flex;flex-direction:column;gap:36px;padding-top:8px}
 .testi-q p{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--on-surface-var);line-height:1.85;margin-bottom:12px}
 .testi-q cite{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-style:normal}
+
+/* ── BOOKING ── */
 .booking-sec{background:var(--surface-low);padding:72px 48px}
 .form-wrap{background:var(--surface);border-radius:20px;padding:52px;box-shadow:0 32px 64px rgba(233,223,236,0.05);border:1px solid rgba(76,68,81,0.12);max-width:680px;margin:0 auto}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -109,6 +142,8 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .form-input::placeholder{color:rgba(233,223,236,0.25)}
 .form-submit{width:100%;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--on-primary);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:18px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 8px 32px rgba(228,181,255,0.2);margin-top:8px;transition:filter 0.2s}
 .form-submit:hover{filter:brightness(1.1)}
+
+/* ── SMS ── */
 .sms-sec{background:var(--surface-container);padding:72px 48px;display:flex;gap:48px;align-items:center}
 .sms-content{flex:1}
 .sms-phone{width:230px;flex-shrink:0;background:#0d0a12;border-radius:28px;padding:16px 12px;box-shadow:0 32px 64px rgba(233,223,236,0.06),0 0 0 1px rgba(228,181,255,0.12)}
@@ -122,6 +157,8 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .bubble{padding:9px 13px;border-radius:16px;font-family:var(--sans);font-size:11.5px;line-height:1.5;max-width:85%}
 .b-user{background:linear-gradient(135deg,var(--secondary-container),#5c1333);color:var(--secondary);align-self:flex-end;border-bottom-right-radius:4px}
 .b-bot{background:var(--surface-high);color:var(--on-surface-var);align-self:flex-start;border-bottom-left-radius:4px}
+
+/* ── FOOTER ── */
 footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid rgba(76,68,81,0.15)}
 .footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:36px}
 .footer-brand{font-family:var(--serif);font-size:22px;color:var(--primary);letter-spacing:0.04em}
@@ -135,6 +172,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
 </style>
 </head>
 <body>
+
 <nav>
   <a class="nav-logo" href="#hero"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/fdcf8f71-3753-469c-90e6-19cd7073dc42/VIM-Logo-e1464723527419.png?format=1500w" alt="VIM Virtues In Motion Dance Studio"/></a>
   <ul class="nav-links">
@@ -146,10 +184,9 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   </ul>
   <button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Free Trial</button>
 </nav>
+
+<!-- HERO: single div, dancer is background-image layer, no child overlay elements -->
 <div id="hero" class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <img class="hero-dancer" src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/full-body-dancer-green.png" alt=""/>
   <div class="hero-content">
     <div class="hero-eyebrow">✦ Yorkville's Premier Dance Studio</div>
     <h1>Where every girl finds her <em>stage</em></h1>
@@ -164,12 +201,14 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
     <strong>★ 2024</strong>
   </div>
 </div>
+
 <div class="trust-bar">
   <div class="trust-item"><span class="t-num">20+</span><span class="t-lbl">Years in Yorkville</span></div>
   <div class="trust-item"><span class="t-num">15+</span><span class="t-lbl">Dance Styles</span></div>
   <div class="trust-item"><span class="t-num">300+</span><span class="t-lbl">Students Enrolled</span></div>
   <div class="trust-item"><span class="t-num">4.9★</span><span class="t-lbl">Google Rating</span></div>
 </div>
+
 <div id="classes" class="section classes-sec">
   <div class="eyebrow">✦ Classes for Every Age</div>
   <div class="sec-title">Find the <em>perfect</em> class</div>
@@ -181,6 +220,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
     <div class="age-card"><span class="age-icon">&#128156;</span><div class="age-label">Adults</div><div class="age-range">18 &amp; Up</div><div class="age-styles">Hip Hop · Ballroom<br>Pilates<br>Drop-in welcome</div><a class="age-link" href="#booking">Enroll now →</a></div>
   </div>
 </div>
+
 <div id="about" class="competitive-sec">
   <div class="comp-content">
     <div class="eyebrow">✦ Performance &amp; Competition</div>
@@ -197,6 +237,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   </div>
   <div class="comp-img"><span>[ Company Photo ]</span></div>
 </div>
+
 <div id="parties" class="section parties-sec">
   <div class="eyebrow">✦ Birthday Parties &amp; Events</div>
   <div class="sec-title">Curated <em>celebration</em> experiences</div>
@@ -207,6 +248,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
     <div class="party-card"><div class="party-img"><span>[ Photo ]</span></div><div class="party-name">The Grand Gala</div><div class="party-style">The Full Production</div><ul class="party-features"><li>Private 2.5hr studio rental</li><li>Full costume hire for all guests</li><li>Up to 20 dancers</li></ul><div class="party-price">$850 <small>/ up to 20 dancers</small></div></div>
   </div>
 </div>
+
 <div class="section testi-sec">
   <div class="eyebrow">✦ Dance Mom Love</div>
   <div class="sec-title">What our <em>Dance Moms</em> say</div>
@@ -223,6 +265,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
     </div>
   </div>
 </div>
+
 <div id="booking" class="section booking-sec">
   <div class="form-wrap">
     <div style="text-align:center;margin-bottom:40px">
@@ -240,6 +283,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
     </div>
   </div>
 </div>
+
 <div id="contact" class="section sms-sec">
   <div class="sms-content">
     <div class="eyebrow">✦ Always Available</div>
@@ -259,6 +303,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
     </div>
   </div>
 </div>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">VIM<p>104 Beaver Street<br>Yorkville, IL 60560<br><br>(630) 553-6570<br>info@vimdance.com</p></div>
@@ -267,6 +312,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   </div>
   <div class="footer-bottom"><span>© 2025 Virtues In Motion Dance Studio</span><span>Proudly serving Kendall County</span></div>
 </footer>
+
 <script src="https://vedabots-manager-production.up.railway.app/widget.js" data-business="vim-dance-studio" data-api="https://vedabots-manager-production.up.railway.app" data-name="VIM Dance Studio"></script>
 </body>
 </html>
