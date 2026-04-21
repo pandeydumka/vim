@@ -18,7 +18,7 @@
 html{scroll-behavior:smooth}
 body{background:var(--surface);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
 *:focus{outline:none!important;box-shadow:none!important}
-.hero-dancer{position:absolute;right:0;top:0;height:100%;width:44%;object-fit:contain;object-position:right bottom;mix-blend-mode:screen;opacity:0.88;pointer-events:none;z-index:3;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.4) 12%,black 40%);mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.4) 12%,black 40%);filter:hue-rotate(230deg) saturate(0.55) brightness(0.85)}
+.hero-dancer{position:absolute;right:0;top:0;bottom:0;height:100%;width:50%;object-fit:contain;object-position:right bottom;mix-blend-mode:screen;opacity:1;pointer-events:none;z-index:1;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.3) 15%,black 50%);mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.3) 15%,black 50%)}
 nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
 .nav-logo{display:flex;align-items:center;text-decoration:none}
 .nav-logo img{height:56px;width:auto;display:block;mix-blend-mode:screen}
@@ -27,7 +27,7 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .nav-links a:hover{color:var(--primary)}
 .nav-cta{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--on-primary);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:10px 22px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 4px 24px rgba(228,181,255,0.25);transition:filter 0.2s}
 .nav-cta:hover{filter:brightness(1.12)}
-.hero{min-height:520px;position:relative;display:flex;align-items:center;padding:80px 48px 72px;overflow:hidden}
+.hero{min-height:620px;position:relative;display:flex;align-items:center;padding:80px 48px 72px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(80,0,122,0.6) 0%,rgba(22,18,26,0) 60%),radial-gradient(ellipse at 20% 80%,rgba(124,45,76,0.3) 0%,transparent 50%),var(--surface)}
 .hero-glow{position:absolute;top:-60px;right:80px;width:300px;height:300px;background:radial-gradient(circle,rgba(228,181,255,0.08) 0%,transparent 70%);border-radius:50%}
 .hero-content{position:relative;z-index:2;max-width:520px}
@@ -40,7 +40,7 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .btn-primary:hover{filter:brightness(1.1)}
 .btn-secondary{background:transparent;border:1px solid rgba(76,68,81,0.4);color:var(--on-surface);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:14px 32px;border-radius:9999px;cursor:pointer;transition:border-color 0.2s}
 .btn-secondary:hover{border-color:rgba(228,181,255,0.5);color:var(--primary)}
-.hero-badge{position:absolute;right:48px;top:50%;transform:translateY(-50%);z-index:4;width:120px;height:120px;border-radius:50%;border:1px solid rgba(228,181,255,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(80,0,122,0.15);backdrop-filter:blur(12px);box-shadow:0 0 40px rgba(228,181,255,0.07)}
+.hero-badge{position:absolute;right:48px;top:50%;transform:translateY(-50%);z-index:4;width:120px;height:120px;border-radius:50%;border:1px solid rgba(228,181,255,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(80,0,122,0.25);backdrop-filter:blur(12px);box-shadow:0 0 40px rgba(228,181,255,0.07)}
 .hero-badge small{font-family:var(--sans);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--secondary);line-height:1.5}
 .hero-badge strong{font-family:var(--serif);font-size:15px;color:var(--on-surface);margin-top:6px;display:block}
 .trust-bar{background:var(--surface-low);display:flex;padding:0}
@@ -149,7 +149,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
 <div id="hero" class="hero">
   <div class="hero-bg"></div>
   <div class="hero-glow"></div>
-  <img class="hero-dancer" src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/dancer-green.jpg" alt=""/>
+  <img class="hero-dancer" src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/full-body-dancer-green.png" alt=""/>
   <div class="hero-content">
     <div class="hero-eyebrow">✦ Yorkville's Premier Dance Studio</div>
     <h1>Where every girl finds her <em>stage</em></h1>
