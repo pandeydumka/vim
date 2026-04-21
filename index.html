@@ -113,9 +113,9 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 
 .testi-sec{background:var(--surface);padding:72px 48px}
 .testi-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.testi-img{width:100%;height:320px;background:var(--surface-high);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 32px 64px rgba(233,223,236,0.05)}
-.testi-img span{font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(233,223,236,0.2)}
 .testi-img-wrap{position:relative}
+.testi-img{width:100%;height:360px;border-radius:16px;overflow:hidden;box-shadow:0 32px 64px rgba(233,223,236,0.07)}
+.testi-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .testi-float{position:absolute;bottom:-24px;right:-20px;background:var(--secondary-container);padding:20px 22px;border-radius:16px;max-width:200px;box-shadow:0 32px 64px rgba(233,223,236,0.06)}
 .testi-float p{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--on-secondary-container);line-height:1.6}
 .testi-quotes{display:flex;flex-direction:column;gap:36px;padding-top:8px}
@@ -261,7 +261,9 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   <div style="height:48px"></div>
   <div class="testi-layout">
     <div class="testi-img-wrap">
-      <div class="testi-img"><span>[ Studio Photo ]</span></div>
+      <div class="testi-img">
+        <img src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/dancemom.png" alt="VIM Dance Moms"/>
+      </div>
       <div class="testi-float"><p>“The most stress-free birthday we’ve ever hosted.”</p></div>
     </div>
     <div class="testi-quotes">
