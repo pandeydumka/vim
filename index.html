@@ -19,7 +19,6 @@ html{scroll-behavior:smooth}
 body{background:var(--surface);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
 *:focus{outline:none!important;box-shadow:none!important}
 
-/* ── HERO ── */
 .hero{
   min-height:640px;
   position:relative;
@@ -47,7 +46,6 @@ body{background:var(--surface);color:var(--on-surface);font-family:var(--sans);l
 .hero-badge small{font-family:var(--sans);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--secondary);line-height:1.5}
 .hero-badge strong{font-family:var(--serif);font-size:15px;color:var(--on-surface);margin-top:6px;display:block}
 
-/* ── NAV ── */
 nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
 .nav-logo{display:flex;align-items:center;text-decoration:none}
 .nav-logo img{height:56px;width:auto;display:block;mix-blend-mode:screen}
@@ -57,7 +55,6 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .nav-cta{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--on-primary);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:10px 22px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 4px 24px rgba(228,181,255,0.25);transition:filter 0.2s}
 .nav-cta:hover{filter:brightness(1.12)}
 
-/* ── BUTTONS ── */
 .btn-primary{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--on-primary);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:14px 32px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 8px 32px rgba(228,181,255,0.18);transition:filter 0.2s;text-decoration:none;display:inline-block}
 .btn-primary:hover{filter:brightness(1.1)}
 .btn-secondary{background:transparent;border:1px solid rgba(76,68,81,0.4);color:var(--on-surface);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:14px 32px;border-radius:9999px;cursor:pointer;transition:border-color 0.2s}
@@ -65,20 +62,17 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .btn-outline{background:transparent;border:1px solid rgba(228,181,255,0.25);color:var(--on-surface);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:13px 26px;border-radius:9999px;cursor:pointer;transition:border-color 0.2s}
 .btn-outline:hover{border-color:rgba(228,181,255,0.6)}
 
-/* ── TRUST BAR ── */
 .trust-bar{background:var(--surface-low);display:flex;padding:0}
 .trust-item{flex:1;text-align:center;padding:20px 8px}
 .t-num{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--primary);display:block}
 .t-lbl{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-surface-var)}
 
-/* ── SECTIONS ── */
 .section{padding:72px 48px}
 .eyebrow{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--secondary);margin-bottom:12px}
 .sec-title{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--on-surface);line-height:1.12;margin-bottom:10px}
 .sec-title em{color:var(--primary);font-style:italic}
 .sec-sub{font-family:var(--sans);font-size:15px;color:var(--on-surface-var);line-height:1.8;max-width:480px;margin-bottom:40px}
 
-/* ── CLASSES ── */
 .classes-sec{background:var(--surface-low)}
 .age-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .age-card{background:var(--surface-high);border-radius:12px;padding:24px 18px;position:relative;overflow:hidden;box-shadow:0 32px 64px rgba(233,223,236,0.04);transition:transform 0.2s}
@@ -90,7 +84,6 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .age-styles{font-family:var(--sans);font-size:12px;color:var(--on-surface-var);line-height:1.9}
 .age-link{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);margin-top:16px;display:inline-block;border-bottom:1px solid rgba(228,181,255,0.3);padding-bottom:2px;text-decoration:none}
 
-/* ── COMPETITIVE ── */
 .competitive-sec{background:var(--surface);padding:72px 48px;display:flex;gap:48px;align-items:center;position:relative;overflow:hidden}
 .competitive-sec::before{content:"";position:absolute;top:-80px;right:-40px;width:400px;height:400px;background:radial-gradient(circle,rgba(80,0,122,0.25) 0%,transparent 65%);pointer-events:none}
 .comp-content{flex:1;position:relative;z-index:2}
@@ -100,7 +93,6 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .comp-features li{font-family:var(--sans);font-size:14px;color:var(--on-surface-var);display:flex;align-items:center;gap:12px}
 .comp-features li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--primary);flex-shrink:0}
 
-/* ── PARTIES ── */
 .parties-sec{background:var(--surface-low);padding:72px 48px}
 .party-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .party-card{background:var(--surface-high);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;box-shadow:0 32px 64px rgba(233,223,236,0.04);position:relative;transition:transform 0.2s}
@@ -108,8 +100,9 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .party-card.featured{background:var(--surface-highest);border:1px solid rgba(228,181,255,0.15);transform:scale(1.03)}
 .party-card.featured:hover{transform:scale(1.03) translateY(-4px)}
 .party-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--on-primary);font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:5px 16px;border-radius:9999px;white-space:nowrap}
-.party-img{height:130px;background:var(--surface-container);border-radius:10px;margin-bottom:20px;display:flex;align-items:center;justify-content:center}
-.party-img span{font-family:var(--sans);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(233,223,236,0.25)}
+.party-img{height:160px;border-radius:10px;margin-bottom:20px;overflow:hidden;background:var(--surface-container)}
+.party-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 0.3s}
+.party-card:hover .party-img img{transform:scale(1.04)}
 .party-name{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--on-surface);margin-bottom:4px}
 .party-style{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--tertiary);margin-bottom:18px}
 .party-features{list-style:none;margin-bottom:20px;display:flex;flex-direction:column;gap:10px;flex:1}
@@ -118,7 +111,6 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .party-price{font-family:var(--serif);font-size:22px;color:var(--on-surface);margin-top:16px;padding-top:16px;border-top:1px solid rgba(76,68,81,0.2)}
 .party-price small{font-family:var(--sans);font-size:12px;color:var(--on-surface-var);font-weight:400}
 
-/* ── TESTIMONIALS ── */
 .testi-sec{background:var(--surface);padding:72px 48px}
 .testi-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
 .testi-img{width:100%;height:320px;background:var(--surface-high);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 32px 64px rgba(233,223,236,0.05)}
@@ -130,7 +122,6 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .testi-q p{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--on-surface-var);line-height:1.85;margin-bottom:12px}
 .testi-q cite{font-family:var(--sans);font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);font-style:normal}
 
-/* ── BOOKING ── */
 .booking-sec{background:var(--surface-low);padding:72px 48px}
 .form-wrap{background:var(--surface);border-radius:20px;padding:52px;box-shadow:0 32px 64px rgba(233,223,236,0.05);border:1px solid rgba(76,68,81,0.12);max-width:680px;margin:0 auto}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -143,7 +134,6 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .form-submit{width:100%;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--on-primary);font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:18px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 8px 32px rgba(228,181,255,0.2);margin-top:8px;transition:filter 0.2s}
 .form-submit:hover{filter:brightness(1.1)}
 
-/* ── SMS ── */
 .sms-sec{background:var(--surface-container);padding:72px 48px;display:flex;gap:48px;align-items:center}
 .sms-content{flex:1}
 .sms-phone{width:230px;flex-shrink:0;background:#0d0a12;border-radius:28px;padding:16px 12px;box-shadow:0 32px 64px rgba(233,223,236,0.06),0 0 0 1px rgba(228,181,255,0.12)}
@@ -158,7 +148,6 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .b-user{background:linear-gradient(135deg,var(--secondary-container),#5c1333);color:var(--secondary);align-self:flex-end;border-bottom-right-radius:4px}
 .b-bot{background:var(--surface-high);color:var(--on-surface-var);align-self:flex-start;border-bottom-left-radius:4px}
 
-/* ── FOOTER ── */
 footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid rgba(76,68,81,0.15)}
 .footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:36px}
 .footer-brand{font-family:var(--serif);font-size:22px;color:var(--primary);letter-spacing:0.04em}
@@ -195,10 +184,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
       <button class="btn-secondary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Free Trial</button>
     </div>
   </div>
-  <div class="hero-badge">
-    <small>Best of<br>Kendall County</small>
-    <strong>★ 2024</strong>
-  </div>
+  <div class="hero-badge"><small>Best of<br>Kendall County</small><strong>★ 2024</strong></div>
 </div>
 
 <div class="trust-bar">
@@ -244,9 +230,28 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   <div class="sec-title">Curated <em>celebration</em> experiences</div>
   <div class="sec-sub">Transform your dancer’s birthday into a professional stage performance. We handle every detail — you just show up and celebrate.</div>
   <div class="party-cards">
-    <div class="party-card"><div class="party-img"><span>[ Photo ]</span></div><div class="party-name">The Prima</div><div class="party-style">Elegant &amp; Classic</div><ul class="party-features"><li>90-min guided Ballet workshop</li><li>Tiara &amp; wand crafting station</li><li>Up to 12 dancers</li></ul><div class="party-price">$450 <small>/ up to 12 dancers</small></div></div>
-    <div class="party-card featured"><div class="party-badge">Most Popular</div><div class="party-img"><span>[ Photo ]</span></div><div class="party-name">The Pop Star</div><div class="party-style">High Energy &amp; Bold</div><ul class="party-features"><li>Music video choreography session</li><li>Glitter makeup &amp; hair tinsel</li><li>Custom playlist &amp; stage lights</li><li>Up to 15 dancers</li></ul><div class="party-price">$575 <small>/ up to 15 dancers</small></div></div>
-    <div class="party-card"><div class="party-img"><span>[ Photo ]</span></div><div class="party-name">The Grand Gala</div><div class="party-style">The Full Production</div><ul class="party-features"><li>Private 2.5hr studio rental</li><li>Full costume hire for all guests</li><li>Up to 20 dancers</li></ul><div class="party-price">$850 <small>/ up to 20 dancers</small></div></div>
+    <div class="party-card">
+      <div class="party-img"><img src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/prima.png" alt="The Prima"/></div>
+      <div class="party-name">The Prima</div>
+      <div class="party-style">Elegant &amp; Classic</div>
+      <ul class="party-features"><li>90-min guided Ballet workshop</li><li>Tiara &amp; wand crafting station</li><li>Up to 12 dancers</li></ul>
+      <div class="party-price">$450 <small>/ up to 12 dancers</small></div>
+    </div>
+    <div class="party-card featured">
+      <div class="party-badge">Most Popular</div>
+      <div class="party-img"><img src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/pop_star.png" alt="The Pop Star"/></div>
+      <div class="party-name">The Pop Star</div>
+      <div class="party-style">High Energy &amp; Bold</div>
+      <ul class="party-features"><li>Music video choreography session</li><li>Glitter makeup &amp; hair tinsel</li><li>Custom playlist &amp; stage lights</li><li>Up to 15 dancers</li></ul>
+      <div class="party-price">$575 <small>/ up to 15 dancers</small></div>
+    </div>
+    <div class="party-card">
+      <div class="party-img"><img src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/grand_gala.png" alt="The Grand Gala"/></div>
+      <div class="party-name">The Grand Gala</div>
+      <div class="party-style">The Full Production</div>
+      <ul class="party-features"><li>Private 2.5hr studio rental</li><li>Full costume hire for all guests</li><li>Up to 20 dancers</li></ul>
+      <div class="party-price">$850 <small>/ up to 20 dancers</small></div>
+    </div>
   </div>
 </div>
 
