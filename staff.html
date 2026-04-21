@@ -20,9 +20,9 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
 *:focus{outline:none}
 
-nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
-.logo{font-family:var(--serif);font-size:20px;color:var(--primary);letter-spacing:0.04em;line-height:1;text-decoration:none}
-.logo small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--secondary);margin-top:3px;font-style:normal}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{height:56px;width:auto;display:block;mix-blend-mode:screen}
 .nav-links{display:flex;gap:24px;list-style:none}
 .nav-links a{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(233,223,236,0.65);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--primary)}
@@ -126,13 +126,12 @@ footer a:hover{color:var(--primary)}
 .modal-bio{font-family:var(--sans);font-size:14px;color:var(--on-var);line-height:1.85;flex:1}
 .modal-close{position:absolute;top:16px;right:16px;background:rgba(76,68,81,0.4);border:none;color:var(--on-surface);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;z-index:10}
 .modal-close:hover{background:rgba(228,181,255,0.15)}
-.modal-coming-soon{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--on-var);opacity:0.6;margin-top:8px}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="logo" href="/">VIM <small>Virtues In Motion</small></a>
+  <a class="logo" href="/"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/fdcf8f71-3753-469c-90e6-19cd7073dc42/VIM-Logo-e1464723527419.png?format=1500w" alt="VIM Virtues In Motion Dance Studio"/></a>
   <ul class="nav-links">
     <li><a href="/#classes">Classes</a></li>
     <li><a href="/staff.html" class="active">About</a></li>
@@ -204,56 +203,11 @@ footer a:hover{color:var(--primary)}
     <p class="sec-desc">Industry professionals bringing authentic urban styles from the professional stage to VIM&rsquo;s studio floor.</p>
   </div>
   <div class="staff-grid cols-4">
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/345ba6f4-469a-4c60-9954-8494cfac396c/Summer+2023+Headshot.jpeg" alt="Tea Rothier"/></div>
-      <div class="card-body">
-        <div class="card-role">Company Assistant</div>
-        <div class="card-name">Tea Rothier</div>
-        <div class="card-spec">Hip Hop Instructor</div>
-        <span class="card-tag">Hip Hop</span>
-        <button class="read-bio-btn" onclick="openBio('tea')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045293630-PA9MZ1YQAUC5ZI9XIAB6/vim_headshot_alvin_ramirez.jpg" alt="Alvin Ramirez"/></div>
-      <div class="card-body">
-        <div class="card-role">Hip Hop Instructor</div>
-        <div class="card-name">Alvin Ramirez</div>
-        <div class="card-spec">Choreographer</div>
-        <span class="card-tag">Hip Hop</span>
-        <button class="read-bio-btn" onclick="openBio('alvin')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9423c3cf-26e6-4767-a14f-6cc49ec76c6b/Anthony+Lofendo.png" alt="Anthony Lofendo"/></div>
-      <div class="card-body">
-        <div class="card-role">Industry Professional</div>
-        <div class="card-name">Anthony Lofendo</div>
-        <div class="card-spec">Hip Hop Instructor &amp; Choreographer</div>
-        <span class="card-tag">Hip Hop</span>
-        <button class="read-bio-btn" onclick="openBio('anthony')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/216f0fdd-4b44-44c3-ac24-83cf2790a0ea/IMG_6974.jpeg" alt="Davien Holton"/></div>
-      <div class="card-body">
-        <div class="card-role">Instructor</div>
-        <div class="card-name">Davien Holton</div>
-        <div class="card-spec">Hip Hop &amp; Improv</div>
-        <span class="card-tag">Hip Hop &middot; Improv</span>
-        <button class="read-bio-btn" onclick="openBio('davien')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f3cffb39-0a5e-406e-808d-a40427370aa6/20240718_212804.jpg" alt="Evan Morrison"/></div>
-      <div class="card-body">
-        <div class="card-role">Hip Hop Instructor</div>
-        <div class="card-name">Evan Morrison</div>
-        <div class="card-spec">Breakdancing</div>
-        <span class="card-tag">Breakdancing</span>
-        <button class="read-bio-btn" onclick="openBio('evan')">Read Bio &rarr;</button>
-      </div>
-    </div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/345ba6f4-469a-4c60-9954-8494cfac396c/Summer+2023+Headshot.jpeg" alt="Tea Rothier"/></div><div class="card-body"><div class="card-role">Company Assistant</div><div class="card-name">Tea Rothier</div><div class="card-spec">Hip Hop Instructor</div><span class="card-tag">Hip Hop</span><button class="read-bio-btn" onclick="openBio('tea')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045293630-PA9MZ1YQAUC5ZI9XIAB6/vim_headshot_alvin_ramirez.jpg" alt="Alvin Ramirez"/></div><div class="card-body"><div class="card-role">Hip Hop Instructor</div><div class="card-name">Alvin Ramirez</div><div class="card-spec">Choreographer</div><span class="card-tag">Hip Hop</span><button class="read-bio-btn" onclick="openBio('alvin')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9423c3cf-26e6-4767-a14f-6cc49ec76c6b/Anthony+Lofendo.png" alt="Anthony Lofendo"/></div><div class="card-body"><div class="card-role">Industry Professional</div><div class="card-name">Anthony Lofendo</div><div class="card-spec">Hip Hop Instructor &amp; Choreographer</div><span class="card-tag">Hip Hop</span><button class="read-bio-btn" onclick="openBio('anthony')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/216f0fdd-4b44-44c3-ac24-83cf2790a0ea/IMG_6974.jpeg" alt="Davien Holton"/></div><div class="card-body"><div class="card-role">Instructor</div><div class="card-name">Davien Holton</div><div class="card-spec">Hip Hop &amp; Improv</div><span class="card-tag">Hip Hop &middot; Improv</span><button class="read-bio-btn" onclick="openBio('davien')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f3cffb39-0a5e-406e-808d-a40427370aa6/20240718_212804.jpg" alt="Evan Morrison"/></div><div class="card-body"><div class="card-role">Hip Hop Instructor</div><div class="card-name">Evan Morrison</div><div class="card-spec">Breakdancing</div><span class="card-tag">Breakdancing</span><button class="read-bio-btn" onclick="openBio('evan')">Read Bio &rarr;</button></div></div>
   </div>
 </div>
 
@@ -267,66 +221,12 @@ footer a:hover{color:var(--primary)}
     <p class="sec-desc">From Ballet to Ballroom, Acrobatics to Contemporary &mdash; our instructors hold advanced certifications and bring lifelong expertise to every class.</p>
   </div>
   <div class="staff-grid">
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1d40660e-2987-477c-ba8e-3d24d16ee64e/IMG_6356.PNG" alt="Jenna Jourdan"/></div>
-      <div class="card-body">
-        <div class="card-role">Dance Instructor</div>
-        <div class="card-name">Jenna Jourdan</div>
-        <div class="card-spec">Acro &amp; Musical Theater</div>
-        <span class="card-tag">Acro &middot; Musical Theater</span>
-        <button class="read-bio-btn" onclick="openBio('jenna')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9ca02717-34c7-498a-9426-9807cc0474d3/Zippy++headshot+1.jpg" alt="Zipporah Wilson"/></div>
-      <div class="card-body">
-        <div class="card-role">Ballet Instructor &amp; Choreographer</div>
-        <div class="card-name">Zipporah Wilson</div>
-        <div class="card-spec">Ballet, Contemporary &amp; Floorbarre</div>
-        <span class="card-tag">Ballet &middot; Contemporary</span>
-        <button class="read-bio-btn" onclick="openBio('zipporah')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3178c44c-7c01-4fe0-ba12-6efff3ee5f5a/IMG_20240801_130803_490.jpg" alt="Andrea Koenig"/></div>
-      <div class="card-body">
-        <div class="card-role">Dance Instructor</div>
-        <div class="card-name">Andrea Koenig</div>
-        <div class="card-spec">Ballet, Contemporary, Jazz &amp; Pilates</div>
-        <span class="card-tag">Ballet &middot; Jazz &middot; Pilates</span>
-        <button class="read-bio-btn" onclick="openBio('andrea')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8132a127-2bb3-449b-890b-00a6ba2e863e/IMG_0150%20%281%29.jpg" alt="Josie Sowers"/></div>
-      <div class="card-body">
-        <div class="card-role">Dance Instructor</div>
-        <div class="card-name">Josie Sowers</div>
-        <div class="card-spec">Various Styles</div>
-        <span class="card-tag">Multi-Style</span>
-        <button class="read-bio-btn" onclick="openBio('josie')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3b1ae97a-d1a8-40c4-b524-859babb111f4/IMG_7923.jpg" alt="Meg Terchin"/></div>
-      <div class="card-body">
-        <div class="card-role">Dance Instructor</div>
-        <div class="card-name">Meg Terchin</div>
-        <div class="card-spec">Ballroom</div>
-        <span class="card-tag">Ballroom</span>
-        <button class="read-bio-btn" onclick="openBio('meg')">Read Bio &rarr;</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045488164-740PIG8UMGGX58UKXE26/vim_headshot_brittany_amoroso.jpg" alt="Brittany Amoroso"/></div>
-      <div class="card-body">
-        <div class="card-role">Instructor &amp; Choreographer</div>
-        <div class="card-name">Brittany Amoroso</div>
-        <div class="card-spec">Ballet &amp; Contemporary</div>
-        <span class="card-tag">Ballet &middot; Contemporary</span>
-        <button class="read-bio-btn" onclick="openBio('brittany')">Read Bio &rarr;</button>
-      </div>
-    </div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1d40660e-2987-477c-ba8e-3d24d16ee64e/IMG_6356.PNG" alt="Jenna Jourdan"/></div><div class="card-body"><div class="card-role">Dance Instructor</div><div class="card-name">Jenna Jourdan</div><div class="card-spec">Acro &amp; Musical Theater</div><span class="card-tag">Acro &middot; Musical Theater</span><button class="read-bio-btn" onclick="openBio('jenna')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9ca02717-34c7-498a-9426-9807cc0474d3/Zippy++headshot+1.jpg" alt="Zipporah Wilson"/></div><div class="card-body"><div class="card-role">Ballet Instructor &amp; Choreographer</div><div class="card-name">Zipporah Wilson</div><div class="card-spec">Ballet, Contemporary &amp; Floorbarre</div><span class="card-tag">Ballet &middot; Contemporary</span><button class="read-bio-btn" onclick="openBio('zipporah')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3178c44c-7c01-4fe0-ba12-6efff3ee5f5a/IMG_20240801_130803_490.jpg" alt="Andrea Koenig"/></div><div class="card-body"><div class="card-role">Dance Instructor</div><div class="card-name">Andrea Koenig</div><div class="card-spec">Ballet, Contemporary, Jazz &amp; Pilates</div><span class="card-tag">Ballet &middot; Jazz &middot; Pilates</span><button class="read-bio-btn" onclick="openBio('andrea')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8132a127-2bb3-449b-890b-00a6ba2e863e/IMG_0150%20%281%29.jpg" alt="Josie Sowers"/></div><div class="card-body"><div class="card-role">Dance Instructor</div><div class="card-name">Josie Sowers</div><div class="card-spec">Various Styles</div><span class="card-tag">Multi-Style</span><button class="read-bio-btn" onclick="openBio('josie')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3b1ae97a-d1a8-40c4-b524-859babb111f4/IMG_7923.jpg" alt="Meg Terchin"/></div><div class="card-body"><div class="card-role">Dance Instructor</div><div class="card-name">Meg Terchin</div><div class="card-spec">Ballroom</div><span class="card-tag">Ballroom</span><button class="read-bio-btn" onclick="openBio('meg')">Read Bio &rarr;</button></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045488164-740PIG8UMGGX58UKXE26/vim_headshot_brittany_amoroso.jpg" alt="Brittany Amoroso"/></div><div class="card-body"><div class="card-role">Instructor &amp; Choreographer</div><div class="card-name">Brittany Amoroso</div><div class="card-spec">Ballet &amp; Contemporary</div><span class="card-tag">Ballet &middot; Contemporary</span><button class="read-bio-btn" onclick="openBio('brittany')">Read Bio &rarr;</button></div></div>
   </div>
 </div>
 
@@ -340,18 +240,9 @@ footer a:hover{color:var(--primary)}
     <p class="sec-desc">VIM&rsquo;s partnership with the Professional Dance Academy brings elite Ballet instruction to Yorkville.</p>
   </div>
   <div class="staff-grid">
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/377b0643-2b44-417b-9c98-a9ebf6bc823c/Screenshot+2026-02-23+170537.png" alt="Sonia Garcia"/></div>
-      <div class="card-body"><div class="card-role">PDA Partner</div><div class="card-name">Sonia Garcia</div><div class="card-spec">Ballet Instructor</div><span class="card-tag">Ballet</span></div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/2212de93-9da0-4d28-8887-bfaf4e7ff28a/Screenshot+2026-02-23+175834.png" alt="Altin Naska"/></div>
-      <div class="card-body"><div class="card-role">PDA Partner</div><div class="card-name">Altin Naska</div><div class="card-spec">Ballet Instructor</div><span class="card-tag">Ballet</span></div>
-    </div>
-    <div class="card">
-      <div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/dbf098af-ba19-4239-a5f5-c6cb4270c46f/Screenshot+2026-02-23+180036.png" alt="Olena Nalyvaiko"/></div>
-      <div class="card-body"><div class="card-role">PDA Partner</div><div class="card-name">Olena Nalyvaiko</div><div class="card-spec">Ballet Instructor</div><span class="card-tag">Ballet</span></div>
-    </div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/377b0643-2b44-417b-9c98-a9ebf6bc823c/Screenshot+2026-02-23+170537.png" alt="Sonia Garcia"/></div><div class="card-body"><div class="card-role">PDA Partner</div><div class="card-name">Sonia Garcia</div><div class="card-spec">Ballet Instructor</div><span class="card-tag">Ballet</span></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/2212de93-9da0-4d28-8887-bfaf4e7ff28a/Screenshot+2026-02-23+175834.png" alt="Altin Naska"/></div><div class="card-body"><div class="card-role">PDA Partner</div><div class="card-name">Altin Naska</div><div class="card-spec">Ballet Instructor</div><span class="card-tag">Ballet</span></div></div>
+    <div class="card"><div class="card-photo-wrap"><img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/dbf098af-ba19-4239-a5f5-c6cb4270c46f/Screenshot+2026-02-23+180036.png" alt="Olena Nalyvaiko"/></div><div class="card-body"><div class="card-role">PDA Partner</div><div class="card-name">Olena Nalyvaiko</div><div class="card-spec">Ballet Instructor</div><span class="card-tag">Ballet</span></div></div>
   </div>
 </div>
 
@@ -369,14 +260,8 @@ footer a:hover{color:var(--primary)}
     <p class="sec-desc">The friendly faces who keep VIM running smoothly &mdash; your first point of contact for questions, scheduling and everything in between.</p>
   </div>
   <div class="admin-grid">
-    <div class="admin-card">
-      <img class="admin-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/faf29cce-5470-47d2-860a-c332f3a5498a/IMG_9824.jpg" alt="Liliana Gorski"/>
-      <div><div class="admin-name">Liliana Gorski</div><div class="admin-role">Administrative Staff &middot; Receptionist</div></div>
-    </div>
-    <div class="admin-card">
-      <img class="admin-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f777997e-e019-4c61-9120-55a07190c843/IMG_0615.jpg" alt="Tessa Kot"/>
-      <div><div class="admin-name">Tessa Kot</div><div class="admin-role">Administrative Staff &middot; Receptionist</div></div>
-    </div>
+    <div class="admin-card"><img class="admin-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/faf29cce-5470-47d2-860a-c332f3a5498a/IMG_9824.jpg" alt="Liliana Gorski"/><div><div class="admin-name">Liliana Gorski</div><div class="admin-role">Administrative Staff &middot; Receptionist</div></div></div>
+    <div class="admin-card"><img class="admin-photo" src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f777997e-e019-4c61-9120-55a07190c843/IMG_0615.jpg" alt="Tessa Kot"/><div><div class="admin-name">Tessa Kot</div><div class="admin-role">Administrative Staff &middot; Receptionist</div></div></div>
   </div>
 </div>
 
@@ -413,127 +298,25 @@ footer a:hover{color:var(--primary)}
 
 <script>
 const bios = {
-  leandra: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e4bdbb21-4db8-4f8d-9eaf-f94389229151/IMG_3467.jpg',
-    badge: 'VIM Company Team Director',
-    name: 'Leandra Groth',
-    role: 'Choreographer & Instructor',
-    bio: 'Leandra Groth Mulcahy has intensely trained in all styles of dance from Ballet to Hip Hop under the most prominent instructors in the Chicagoland area since age 8. As a young teenager she began traveling the US and Canada assistant teaching and training as well as traveling with Co Dance Convention working alongside the Top Choreographers in the Industry. Knowing dance was in her future she often traveled to LA to train with the most iconic Jazz and Hip Hop Choreographers in the industry and continues to do so.\n\nCommercial dance and a fusion of styles led Leandra\'s choreography to become a standout at competitions and in performances. Her work has taken her across the US and even overseas. Leandra\'s unique blend of styles in her choreography can be found in performances on film as well as on stage. Credits include Oprah and the Black Eyed Peas, the Industry Dance Awards, Mercedes Benz, Shawn Mendes, America\'s Got Talent, and most recently had her choreography displayed at the Reconstruct Exhibition in Los Angeles.\n\nShe makes sure that her dancers receive exceptional training and it is priority that her dancers receive top Industry experiences. Her passion and love of Dance and Fitness is apparent in every class with every age wherever she teaches.'
-  },
-  grace: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/98af29f2-3757-4be1-888f-cdf401978c0f/IMG_8644%20%282%29.jpeg',
-    badge: 'VIM Company Team Director',
-    name: 'Grace Jones Beebe',
-    role: 'Choreographer & Instructor',
-    bio: 'Grace was born and raised in the Chicago Suburbs and fell in love with dance at the age of 2. She comes from a background of training in all styles of dance. Growing up she learned in the styles of Jazz, Ballet, Lyrical, Contemporary, Hip Hop, Jazz Funk, Musical Theater, and Pointe. At the age of 9 she started competing with a competition team in regional and national competitions and attended local conventions as well.\n\nAfter high school, Grace attended Theater Arts Preparatory School in Las Vegas, Nevada where she got even more experience in the dance industry and trained to be a professional dancer. She was able to take from a range of teachers from Broadway professionals to Commercial artists. She then danced at Cedar Point Amusement Park where she was a Dance/Show Captain in their shows for the 150th Anniversary of the park.\n\nAfter her contracts there she returned to the Chicago area and has been teaching and choreographing ever since, bringing her wealth of professional experience to every dancer at VIM.'
-  },
-  arianne: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e6f437ef-12d3-4112-863d-a3ef2154a187/Arianne+Headshot.jpg',
-    badge: 'VIM Company Hip Hop Director',
-    name: 'Arianne Ramirez Bruning',
-    role: 'Choreographer & Instructor',
-    bio: 'Arianne Ramirez earned a Bachelor of Science in Nursing degree from the University of Illinois\u2013Chicago in 2013. She is now working as a MDS Director at a long term care facility.\n\nArianne has been dancing since she was 3 years old and has been in love with Hip Hop since the very start. She began studying Hip Hop more seriously as she got older, learning from some of the best instructors in the industry. She has been choreographing and teaching Hip Hop for over a decade and brings her passion for the art form to every class she teaches at VIM.\n\nAs VIM\'s Company Hip Hop Director, Arianne leads the competitive Hip Hop program with high-energy choreography and authentic street-dance technique, helping dancers find their voice and confidence through movement.'
-  },
-  tea: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/345ba6f4-469a-4c60-9954-8494cfac396c/Summer+2023+Headshot.jpeg',
-    badge: 'VIM Hip Hop Company Assistant',
-    name: 'Tea Rothier',
-    role: 'Hip Hop Instructor',
-    bio: 'Born and raised in the suburbs of Chicago, T\u00e9a Routhier discovered her love for dance at the age of 3. Since then, she continued her training in numerous genres including jazz, tap, ballet, lyrical, contemporary, and hip hop.\n\nT\u00e9a began assistant teaching classes under the direction of Leandra Groth and has been growing as an instructor ever since. Her enthusiasm for dance and her dedication to every student makes her a beloved presence on the VIM studio floor.\n\nShe is passionate about sharing her love of dance with the next generation of performers, bringing energy and encouragement to every class she teaches.'
-  },
-  alvin: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045293630-PA9MZ1YQAUC5ZI9XIAB6/vim_headshot_alvin_ramirez.jpg',
-    badge: 'Hip Hop Instructor',
-    name: 'Alvin Ramirez',
-    role: 'Choreographer',
-    bio: 'Alvin Ramirez is an experienced Hip Hop instructor and choreographer who brings his passion for urban dance styles to the VIM studio. His classes emphasize authenticity, musicality, and the creative expression that makes Hip Hop such a powerful art form.\n\nAlvin is dedicated to helping his students develop not just technique, but a genuine love for the culture and history behind the movement styles he teaches.\n\n\u2014 Full bio coming soon.'
-  },
-  anthony: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9423c3cf-26e6-4767-a14f-6cc49ec76c6b/Anthony+Lofendo.png',
-    badge: 'Industry Professional',
-    name: 'Anthony Lofendo',
-    role: 'Hip Hop Instructor & Choreographer',
-    bio: 'Anthony Lofendo is one of the premier dancers in Los Angeles. He has worked with the likes of Lady Gaga, Nicki Minaj, Katy Perry, The Backstreet Boys, Gwen Stefani, The Pussycat Dolls, Hillary Duff, Will.i.am, Stevie Wonder and many more.\n\nHe has been featured in video games, television, and films including appearances in Avatar, This Is the End, and hit shows like Glee and How I Met Your Mother.\n\nNow based in Chicago with years of industry experience behind him, Anthony\'s newest mission is to teach and inspire the next generation of dancers, helping young artists unlock their potential and follow their dreams just as he did.'
-  },
-  davien: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/216f0fdd-4b44-44c3-ac24-83cf2790a0ea/IMG_6974.jpeg',
-    badge: 'Hip Hop & Improv Instructor',
-    name: 'Davien Holton',
-    role: 'Aspiring Industry Professional',
-    bio: 'Davien is a Milwaukee native currently residing in Chicago, Illinois. Davien has been dancing since the age of 6 years old and got his professional start at the age of 12 as a kid dancer for the NBA team The Milwaukee Bucks.\n\nDavien graduated from the University of Wisconsin Milwaukee with a Major in Dance and a minor in J.A.M.S. He has trained in multiple styles such as African, Modern, Contemporary, Tap, and other styles, but his main style is Hip Hop, which he has trained in the most.\n\nSome of Davien\'s credits include The Monsters of Hip Hop Show 2024, field cast for Usher\'s Super Bowl halftime show, the North of the 10 BET+ movie, Daya, Pepsi, and more. Davien is signed with Bloc LA.'
-  },
-  evan: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f3cffb39-0a5e-406e-808d-a40427370aa6/20240718_212804.jpg',
-    badge: 'Hip Hop Instructor',
-    name: 'Evan Morrison',
-    role: 'Breakdancing',
-    bio: 'With over a decade\'s experience in breakdancing and event promotion, Evan Morrison has actively been a member of the suburban Chicagoland hip-hop community. He first began learning to Bboy (more commonly known as breakdance) while in high school as a part of Urban Arts Club, a hip-hop dance program for students.\n\nAfter graduating, Evan would assist in hosting, promoting, and advertising of local dance events, using these experiences to also teach breakdance in an official capacity, as well as hosting his own events, both for experienced dancers and younger generation dancers who wished to learn the fundamentals of Hip-hop.\n\nBy 2018, he had become an assistant breakdance instructor at Virtues in Motion in Yorkville, IL, and has been a full instructor there since, sharing his deep love of breakdance culture with every student he teaches.'
-  },
-  jenna: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1d40660e-2987-477c-ba8e-3d24d16ee64e/IMG_6356.PNG',
-    badge: 'Dance Instructor',
-    name: 'Jenna Jourdan',
-    role: 'Acro & Musical Theater',
-    bio: 'Jenna is a dancer with over 12 years of competitive experience. She began her training as a gymnast, developing a strong foundation in strength, flexibility, and control, which later transitioned seamlessly into acro dance.\n\nGrowing up as a studio owner\'s kid, Jenna was immersed in the dance world from a young age and attended numerous dance conventions, learning from a wide variety of instructors and styles. During her senior year of high school, Jenna was selected to be part of the LADM Dance Convention company, where she traveled and trained alongside professional dancers, gaining valuable industry experience.\n\nShe specializes in acro, musical theater, contemporary, and jazz, and is passionate about blending technical precision with artistic expression in every class she teaches.'
-  },
-  zipporah: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9ca02717-34c7-498a-9426-9807cc0474d3/Zippy++headshot+1.jpg',
-    badge: 'Ballet Instructor & Choreographer',
-    name: 'Zipporah Wilson',
-    role: 'Ballet, Contemporary & Floorbarre',
-    bio: 'Zipporah Wilson is a dedicated Ballet instructor and choreographer who brings elegance, precision, and artistry to every class at VIM. She specializes in Ballet, Contemporary, and Floorbarre, offering students a comprehensive foundation in classical and modern movement.\n\nHer teaching philosophy centers on building strong technical foundations while nurturing each dancer\'s individual artistic voice.\n\n\u2014 Full bio coming soon.'
-  },
-  andrea: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3178c44c-7c01-4fe0-ba12-6efff3ee5f5a/IMG_20240801_130803_490.jpg',
-    badge: 'Dance Instructor',
-    name: 'Andrea Koenig',
-    role: 'Ballet, Contemporary, Jazz & Pilates',
-    bio: 'Andrea has been extensively trained in contemporary, lyrical, jazz, hip hop, and ballet \u2014 working with ballet masters Homer Hans Bryant, Mme Peff Modelski, and more \u2014 with experience in pointe, tap, tumbling, musical theater and Latin styles.\n\nShe is an alumnus of Sole Unique Dance Company, and successfully competed in a wide range of styles at competitions and conventions throughout the Chicagoland area from the ages of 14\u201318.\n\nHer professional performance credits include dancing on opening day of High School Musical at Randall 15 Imax, backup dancing for a performing artist at the Paramount Theater, and dancing at festivals and events across the greater Chicago area. Andrea brings this rich professional background to every class she teaches at VIM.'
-  },
-  josie: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8132a127-2bb3-449b-890b-00a6ba2e863e/IMG_0150%20%281%29.jpg',
-    badge: 'Dance Instructor',
-    name: 'Josie Sowers',
-    role: 'Various Styles',
-    bio: 'Josie Sowers has gained training in multiple dance styles through diverse dance experiences. She began dancing at the age of 5, starting with Jazz and Hip-hop, and soon broadened her skills as she entered the competitive world by taking foundational classes such as ballet, conditioning, and technique.\n\nDuring her time as a competitive dancer, she participated in regional and national contests as well as conventions, where she trained under some of the most renowned artists and choreographers in the industry. Josie\'s training extended beyond the studio; she also gained experience in a school dance environment, where she further developed skills in styles such as pom.\n\nSince then, she has choreographed award-winning routines performed at UDA (Universal Dance Association). Returning to the studio setting, Josie has been growing as an instructor under the guidance of the VIM faculty, bringing her enthusiasm and multi-style expertise to every class.'
-  },
-  meg: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3b1ae97a-d1a8-40c4-b524-859babb111f4/IMG_7923.jpg',
-    badge: 'Dance Instructor',
-    name: 'Meg Terchin',
-    role: 'Ballroom',
-    bio: 'Meg Terchin has 16+ years of Ballroom dance training in American Rhythm, American Smooth, International Latin, International Standard and social styles (Latin & club). She has trained with top Ballroom & Latin professionals and judges, including Dancing With the Stars alumni.\n\nMeg is most proud of her 10 time Pro-Am Show-dance titles and each of the students who hold Champion status. She is currently an Ohio Star Ball Show Dance finalist (2025). As a professional (with her past partner) she has placed Nationally as a top Fred Astaire American Rhythm and American Smooth finalist.\n\nMeg\'s favorite thing is learning every student\'s story and bringing out the best in them. Laughter and smiles are always welcome in her classroom.'
-  },
-  brittany: {
-    photo: 'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045488164-740PIG8UMGGX58UKXE26/vim_headshot_brittany_amoroso.jpg',
-    badge: 'Instructor & Choreographer',
-    name: 'Brittany Amoroso',
-    role: 'Ballet & Contemporary',
-    bio: 'Brittany Amoroso is a passionate Ballet and Contemporary instructor and choreographer who brings grace and artistic depth to every class at VIM.\n\nHer teaching approach emphasizes both technical excellence and expressive artistry, helping dancers discover their unique voice through movement.\n\n\u2014 Full bio coming soon.'
-  }
+  leandra: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e4bdbb21-4db8-4f8d-9eaf-f94389229151/IMG_3467.jpg',badge:'VIM Company Team Director',name:'Leandra Groth',role:'Choreographer & Instructor',bio:'Leandra Groth Mulcahy has intensely trained in all styles of dance from Ballet to Hip Hop under the most prominent instructors in the Chicagoland area since age 8. As a young teenager she began traveling the US and Canada assistant teaching and training as well as traveling with Co Dance Convention working alongside the Top Choreographers in the Industry. Knowing dance was in her future she often traveled to LA to train with the most iconic Jazz and Hip Hop Choreographers in the industry and continues to do so.\n\nCommercial dance and a fusion of styles led Leandra\'s choreography to become a standout at competitions and in performances. Her work has taken her across the US and even overseas. Credits include Oprah and the Black Eyed Peas, the Industry Dance Awards, Mercedes Benz, Shawn Mendes, America\'s Got Talent, and most recently had her choreography displayed at the Reconstruct Exhibition in Los Angeles.\n\nShe makes sure that her dancers receive exceptional training and it is priority that her dancers receive top Industry experiences. Her passion and love of Dance and Fitness is apparent in every class with every age wherever she teaches.'},
+  grace: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/98af29f2-3757-4be1-888f-cdf401978c0f/IMG_8644%20%282%29.jpeg',badge:'VIM Company Team Director',name:'Grace Jones Beebe',role:'Choreographer & Instructor',bio:'Grace was born and raised in the Chicago Suburbs and fell in love with dance at the age of 2. She comes from a background of training in all styles of dance. Growing up she learned in the styles of Jazz, Ballet, Lyrical, Contemporary, Hip Hop, Jazz Funk, Musical Theater, and Pointe. At the age of 9 she started competing with a competition team in regional and national competitions.\n\nAfter high school, Grace attended Theater Arts Preparatory School in Las Vegas, Nevada where she trained to be a professional dancer, taking from Broadway professionals to Commercial artists. She then danced at Cedar Point Amusement Park where she was a Dance/Show Captain in their shows for the 150th Anniversary of the park.\n\nAfter her contracts there she returned to the Chicago area and has been teaching and choreographing ever since, bringing her wealth of professional experience to every dancer at VIM.'},
+  arianne: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e6f437ef-12d3-4112-863d-a3ef2154a187/Arianne+Headshot.jpg',badge:'VIM Company Hip Hop Director',name:'Arianne Ramirez Bruning',role:'Choreographer & Instructor',bio:'Arianne Ramirez earned a Bachelor of Science in Nursing degree from the University of Illinois\u2013Chicago in 2013. She is now working as a MDS Director at a long term care facility.\n\nArianne has been dancing since she was 3 years old and has been in love with Hip Hop since the very start. She began studying Hip Hop more seriously as she got older, learning from some of the best instructors in the industry. She has been choreographing and teaching Hip Hop for over a decade.\n\nAs VIM\'s Company Hip Hop Director, Arianne leads the competitive Hip Hop program with high-energy choreography and authentic street-dance technique, helping dancers find their voice and confidence through movement.'},
+  tea: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/345ba6f4-469a-4c60-9954-8494cfac396c/Summer+2023+Headshot.jpeg',badge:'VIM Hip Hop Company Assistant',name:'Tea Rothier',role:'Hip Hop Instructor',bio:'Born and raised in the suburbs of Chicago, T\u00e9a Routhier discovered her love for dance at the age of 3. Since then, she continued her training in numerous genres including jazz, tap, ballet, lyrical, contemporary, and hip hop.\n\nT\u00e9a began assistant teaching classes under the direction of Leandra Groth and has been growing as an instructor ever since. Her enthusiasm for dance and her dedication to every student makes her a beloved presence on the VIM studio floor.\n\nShe is passionate about sharing her love of dance with the next generation of performers, bringing energy and encouragement to every class she teaches.'},
+  alvin: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045293630-PA9MZ1YQAUC5ZI9XIAB6/vim_headshot_alvin_ramirez.jpg',badge:'Hip Hop Instructor',name:'Alvin Ramirez',role:'Choreographer',bio:'Alvin Ramirez is an experienced Hip Hop instructor and choreographer who brings his passion for urban dance styles to the VIM studio. His classes emphasize authenticity, musicality, and the creative expression that makes Hip Hop such a powerful art form.\n\nAlvin is dedicated to helping his students develop not just technique, but a genuine love for the culture and history behind the movement styles he teaches.\n\n\u2014 Full bio coming soon.'},
+  anthony: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9423c3cf-26e6-4767-a14f-6cc49ec76c6b/Anthony+Lofendo.png',badge:'Industry Professional',name:'Anthony Lofendo',role:'Hip Hop Instructor & Choreographer',bio:'Anthony Lofendo is one of the premier dancers in Los Angeles. He has worked with the likes of Lady Gaga, Nicki Minaj, Katy Perry, The Backstreet Boys, Gwen Stefani, The Pussycat Dolls, Hillary Duff, Will.i.am, Stevie Wonder and many more.\n\nHe has been featured in video games, television, and films including appearances in Avatar, This Is the End, and hit shows like Glee and How I Met Your Mother.\n\nNow based in Chicago with years of industry experience behind him, Anthony\'s newest mission is to teach and inspire the next generation of dancers, helping young artists unlock their potential and follow their dreams just as he did.'},
+  davien: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/216f0fdd-4b44-44c3-ac24-83cf2790a0ea/IMG_6974.jpeg',badge:'Hip Hop & Improv Instructor',name:'Davien Holton',role:'Aspiring Industry Professional',bio:'Davien is a Milwaukee native currently residing in Chicago, Illinois. Davien has been dancing since the age of 6 and got his professional start at the age of 12 as a kid dancer for the NBA team The Milwaukee Bucks.\n\nDavien graduated from the University of Wisconsin Milwaukee with a Major in Dance and a minor in J.A.M.S. He has trained in multiple styles such as African, Modern, Contemporary, Tap, and others, but his main style is Hip Hop.\n\nSome of Davien\'s credits include The Monsters of Hip Hop Show 2024, field cast for Usher\'s Super Bowl halftime show, the North of the 10 BET+ movie, Daya, Pepsi, and more. Davien is signed with Bloc LA.'},
+  evan: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f3cffb39-0a5e-406e-808d-a40427370aa6/20240718_212804.jpg',badge:'Hip Hop Instructor',name:'Evan Morrison',role:'Breakdancing',bio:'With over a decade\'s experience in breakdancing and event promotion, Evan Morrison has actively been a member of the suburban Chicagoland hip-hop community. He first began learning to Bboy while in high school as part of Urban Arts Club, a hip-hop dance program for students.\n\nAfter graduating, Evan assisted in hosting, promoting, and advertising local dance events, using these experiences to teach breakdance in an official capacity, as well as hosting his own events for both experienced dancers and younger generation dancers.\n\nBy 2018, he had become an assistant breakdance instructor at Virtues in Motion in Yorkville, IL, and has been a full instructor there since, sharing his deep love of breakdance culture with every student he teaches.'},
+  jenna: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1d40660e-2987-477c-ba8e-3d24d16ee64e/IMG_6356.PNG',badge:'Dance Instructor',name:'Jenna Jourdan',role:'Acro & Musical Theater',bio:'Jenna is a dancer with over 12 years of competitive experience. She began her training as a gymnast, developing a strong foundation in strength, flexibility, and control, which later transitioned seamlessly into acro dance.\n\nGrowing up as a studio owner\'s kid, Jenna was immersed in the dance world from a young age and attended numerous dance conventions. During her senior year of high school, Jenna was selected to be part of the LADM Dance Convention company, where she traveled and trained alongside professional dancers.\n\nShe specializes in acro, musical theater, contemporary, and jazz, and is passionate about blending technical precision with artistic expression in every class she teaches.'},
+  zipporah: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9ca02717-34c7-498a-9426-9807cc0474d3/Zippy++headshot+1.jpg',badge:'Ballet Instructor & Choreographer',name:'Zipporah Wilson',role:'Ballet, Contemporary & Floorbarre',bio:'Zipporah Wilson is a dedicated Ballet instructor and choreographer who brings elegance, precision, and artistry to every class at VIM. She specializes in Ballet, Contemporary, and Floorbarre, offering students a comprehensive foundation in classical and modern movement.\n\nHer teaching philosophy centers on building strong technical foundations while nurturing each dancer\'s individual artistic voice.\n\n\u2014 Full bio coming soon.'},
+  andrea: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3178c44c-7c01-4fe0-ba12-6efff3ee5f5a/IMG_20240801_130803_490.jpg',badge:'Dance Instructor',name:'Andrea Koenig',role:'Ballet, Contemporary, Jazz & Pilates',bio:'Andrea has been extensively trained in contemporary, lyrical, jazz, hip hop, and ballet \u2014 working with ballet masters Homer Hans Bryant, Mme Peff Modelski, and more \u2014 with experience in pointe, tap, tumbling, musical theater and Latin styles.\n\nShe is an alumnus of Sole Unique Dance Company, and successfully competed in a wide range of styles at competitions and conventions throughout the Chicagoland area from the ages of 14\u201318.\n\nHer professional credits include dancing on opening day of High School Musical at Randall 15 Imax, backup dancing for a performing artist at the Paramount Theater, and dancing at festivals and events across the greater Chicago area.'},
+  josie: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8132a127-2bb3-449b-890b-00a6ba2e863e/IMG_0150%20%281%29.jpg',badge:'Dance Instructor',name:'Josie Sowers',role:'Various Styles',bio:'Josie Sowers has gained training in multiple dance styles through diverse dance experiences. She began dancing at the age of 5, starting with Jazz and Hip-hop, and soon broadened her skills by taking foundational classes such as ballet, conditioning, and technique.\n\nDuring her time as a competitive dancer, she participated in regional and national contests as well as conventions, where she trained under some of the most renowned artists and choreographers in the industry.\n\nSince then, she has choreographed award-winning routines performed at UDA (Universal Dance Association). Returning to the studio setting, Josie has been growing as an instructor under the guidance of the VIM faculty.'},
+  meg: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/3b1ae97a-d1a8-40c4-b524-859babb111f4/IMG_7923.jpg',badge:'Dance Instructor',name:'Meg Terchin',role:'Ballroom',bio:'Meg Terchin has 16+ years of Ballroom dance training in American Rhythm, American Smooth, International Latin, International Standard and social styles. She has trained with top Ballroom & Latin professionals and judges, including Dancing With the Stars alumni.\n\nMeg is most proud of her 10 time Pro-Am Show-dance titles and each of the students who hold Champion status. She is currently an Ohio Star Ball Show Dance finalist (2025).\n\nAs a professional she has placed Nationally as a top Fred Astaire American Rhythm and American Smooth finalist. Meg\'s favorite thing is learning every student\'s story and bringing out the best in them.'},
+  brittany: {photo:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1659045488164-740PIG8UMGGX58UKXE26/vim_headshot_brittany_amoroso.jpg',badge:'Instructor & Choreographer',name:'Brittany Amoroso',role:'Ballet & Contemporary',bio:'Brittany Amoroso is a passionate Ballet and Contemporary instructor and choreographer who brings grace and artistic depth to every class at VIM.\n\nHer teaching approach emphasizes both technical excellence and expressive artistry, helping dancers discover their unique voice through movement.\n\n\u2014 Full bio coming soon.'}
 };
-
-function openBio(key) {
-  const b = bios[key];
-  if (!b) return;
-  document.getElementById('modal-photo').src = b.photo;
-  document.getElementById('modal-photo').alt = b.name;
-  document.getElementById('modal-badge').textContent = b.badge;
-  document.getElementById('modal-name').textContent = b.name;
-  document.getElementById('modal-role').textContent = b.role;
-  const bioEl = document.getElementById('modal-bio');
-  bioEl.innerHTML = b.bio.split('\n\n').map(p => '<p style="margin-bottom:14px">' + p + '</p>').join('');
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeBio() {
-  document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeOnOverlay(e) {
-  if (e.target === document.getElementById('modal')) closeBio();
-}
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBio(); });
+function openBio(key){const b=bios[key];if(!b)return;document.getElementById('modal-photo').src=b.photo;document.getElementById('modal-photo').alt=b.name;document.getElementById('modal-badge').textContent=b.badge;document.getElementById('modal-name').textContent=b.name;document.getElementById('modal-role').textContent=b.role;const bioEl=document.getElementById('modal-bio');bioEl.innerHTML=b.bio.split('\n\n').map(p=>'<p style="margin-bottom:14px">'+p+'</p>').join('');document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeBio(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+function closeOnOverlay(e){if(e.target===document.getElementById('modal'))closeBio();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBio();});
 </script>
 </body>
 </html>
