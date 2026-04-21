@@ -18,9 +18,9 @@
 html{scroll-behavior:smooth}
 body{background:var(--surface);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
 *:focus{outline:none!important;box-shadow:none!important}
-nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
-.nav-logo{font-family:var(--serif);font-size:20px;color:var(--primary);letter-spacing:0.04em;line-height:1;text-decoration:none}
-.nav-logo small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--secondary);margin-top:3px;font-style:normal}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo img{height:56px;width:auto;display:block;mix-blend-mode:screen}
 .nav-links{display:flex;gap:24px;list-style:none}
 .nav-links a{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(233,223,236,0.7);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--primary)}
@@ -136,7 +136,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
 <body>
 
 <nav>
-  <a class="nav-logo" href="#hero">VIM <small>Virtues In Motion</small></a>
+  <a class="nav-logo" href="#hero"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/fdcf8f71-3753-469c-90e6-19cd7073dc42/VIM-Logo-e1464723527419.png?format=1500w" alt="VIM Virtues In Motion Dance Studio"/></a>
   <ul class="nav-links">
     <li><a href="#classes">Classes</a></li>
     <li><a href="staff.html">About</a></li>

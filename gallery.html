@@ -19,9 +19,9 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
 *:focus{outline:none}
 
-nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
-.logo{font-family:var(--serif);font-size:20px;color:var(--primary);letter-spacing:0.04em;line-height:1;text-decoration:none}
-.logo small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--secondary);margin-top:3px;font-style:normal}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{height:56px;width:auto;display:block;mix-blend-mode:screen}
 .nav-links{display:flex;gap:24px;list-style:none}
 .nav-links a{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(233,223,236,0.6);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--primary)}
@@ -136,7 +136,7 @@ footer a:hover{color:var(--primary)}
 <body>
 
 <nav>
-  <a class="logo" href="/">VIM <small>Virtues In Motion</small></a>
+  <a class="logo" href="/"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/fdcf8f71-3753-469c-90e6-19cd7073dc42/VIM-Logo-e1464723527419.png?format=1500w" alt="VIM Virtues In Motion Dance Studio"/></a>
   <ul class="nav-links">
     <li><a href="/#classes">Classes</a></li>
     <li><a href="/#about">About</a></li>
@@ -161,7 +161,7 @@ footer a:hover{color:var(--primary)}
     </div>
     <div class="quote-float">
       <span>✦ Dance Mom Love</span>
-      <p>&ldquo;They don’t just teach dance — they build confident, beautiful young women.&rdquo;</p>
+      <p>&ldquo;They don't just teach dance — they build confident, beautiful young women.&rdquo;</p>
     </div>
   </div>
 </div>
@@ -193,12 +193,8 @@ footer a:hover{color:var(--primary)}
       </div>
     </div>
     <div class="perf-side">
-      <div class="perf-sm" onclick="openLightbox(1)">
-        <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/487d8e9a-23bf-4c85-a40e-0475a723b024/2019_VIM_Co_Groups_02w.jpg" alt="VIM 2019 Group 02"/>
-      </div>
-      <div class="perf-sm" onclick="openLightbox(2)">
-        <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/154db76d-4755-48ca-a609-47c663186183/2019_VIM_Co_Groups_03w.jpg" alt="VIM 2019 Group 03"/>
-      </div>
+      <div class="perf-sm" onclick="openLightbox(1)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/487d8e9a-23bf-4c85-a40e-0475a723b024/2019_VIM_Co_Groups_02w.jpg" alt="VIM 2019 Group 02"/></div>
+      <div class="perf-sm" onclick="openLightbox(2)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/154db76d-4755-48ca-a609-47c663186183/2019_VIM_Co_Groups_03w.jpg" alt="VIM 2019 Group 03"/></div>
     </div>
   </div>
 </div>
@@ -232,7 +228,7 @@ footer a:hover{color:var(--primary)}
 
 <div class="divider"></div>
 
-<!-- PORTRAIT GRID — staggered + grayscale hover -->
+<!-- PORTRAIT GRID -->
 <div class="section" style="background:var(--bg-con)" data-section="all heads18">
   <div class="sec-head">
     <div>
@@ -242,22 +238,10 @@ footer a:hover{color:var(--primary)}
     <div class="sec-meta">Hover to reveal colour</div>
   </div>
   <div class="portrait-grid">
-    <div class="p-card" onclick="openLightbox(15)">
-      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg" alt="2018 VIM Company Headshots"/>
-      <div class="p-reveal"><p>VIM Company Dancer</p><span>2018 Headshots</span></div>
-    </div>
-    <div class="p-card offset" onclick="openLightbox(16)">
-      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg" alt="2018 VIM Company Action"/>
-      <div class="p-reveal"><p>VIM Company Dancer</p><span>2018 Action</span></div>
-    </div>
-    <div class="p-card" onclick="openLightbox(17)">
-      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg" alt="2018 VIM Company Groups"/>
-      <div class="p-reveal"><p>VIM Company Dancers</p><span>2018 Groups</span></div>
-    </div>
-    <div class="p-card offset" onclick="openLightbox(18)">
-      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg" alt="2019 VIM Competition Company"/>
-      <div class="p-reveal"><p>VIM Company Dancers</p><span>2019 Groups</span></div>
-    </div>
+    <div class="p-card" onclick="openLightbox(15)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg" alt="2018 VIM Company Headshots"/><div class="p-reveal"><p>VIM Company Dancer</p><span>2018 Headshots</span></div></div>
+    <div class="p-card offset" onclick="openLightbox(16)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg" alt="2018 VIM Company Action"/><div class="p-reveal"><p>VIM Company Dancer</p><span>2018 Action</span></div></div>
+    <div class="p-card" onclick="openLightbox(17)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg" alt="2018 VIM Company Groups"/><div class="p-reveal"><p>VIM Company Dancers</p><span>2018 Groups</span></div></div>
+    <div class="p-card offset" onclick="openLightbox(18)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg" alt="2019 VIM Competition Company"/><div class="p-reveal"><p>VIM Company Dancers</p><span>2019 Groups</span></div></div>
   </div>
 </div>
 
@@ -270,34 +254,17 @@ footer a:hover{color:var(--primary)}
     <div class="sec-meta">4 collections</div>
   </div>
   <div class="album-row">
-    <div class="a-card">
-      <div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg" alt="2019 Groups"/></div>
-      <div class="a-info"><div class="a-year">2019</div><div class="a-name">Competition Company Groups</div><div class="a-count">24 photos</div></div>
-    </div>
-    <div class="a-card">
-      <div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg" alt="2018 Headshots"/></div>
-      <div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Headshots</div><div class="a-count">18 photos</div></div>
-    </div>
-    <div class="a-card">
-      <div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg" alt="2018 Groups"/></div>
-      <div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Groups</div><div class="a-count">20 photos</div></div>
-    </div>
-    <div class="a-card">
-      <div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg" alt="2018 Action"/></div>
-      <div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Action Shots</div><div class="a-count">16 photos</div></div>
-    </div>
+    <div class="a-card"><div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg" alt="2019 Groups"/></div><div class="a-info"><div class="a-year">2019</div><div class="a-name">Competition Company Groups</div><div class="a-count">24 photos</div></div></div>
+    <div class="a-card"><div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg" alt="2018 Headshots"/></div><div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Headshots</div><div class="a-count">18 photos</div></div></div>
+    <div class="a-card"><div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg" alt="2018 Groups"/></div><div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Groups</div><div class="a-count">20 photos</div></div></div>
+    <div class="a-card"><div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg" alt="2018 Action"/></div><div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Action Shots</div><div class="a-count">16 photos</div></div></div>
   </div>
 </div>
 
 <!-- YOUTUBE STRIP -->
 <div class="yt-strip">
-  <div class="yt-icon">
-    <svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8C20.7 3 19.4 3 18.8 2.9 16.2 2.8 12 2.8 12 2.8S7.8 2.8 5.2 3c-.6.1-1.9.1-3 1.2C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.2.3 4.2S1.3 19.5 2.2 20.3c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.7 12 21.7 12 21.7s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.2.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.1l8.1 3.7-8.1 3.7z"/></svg>
-  </div>
-  <div class="yt-text">
-    <h3>Watch VIM on YouTube</h3>
-    <p>Performance videos, recitals &amp; competition highlights from Yorkville</p>
-  </div>
+  <div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8C20.7 3 19.4 3 18.8 2.9 16.2 2.8 12 2.8 12 2.8S7.8 2.8 5.2 3c-.6.1-1.9.1-3 1.2C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.2.3 4.2S1.3 19.5 2.2 20.3c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.7 12 21.7 12 21.7s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.2.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.1l8.1 3.7-8.1 3.7z"/></svg></div>
+  <div class="yt-text"><h3>Watch VIM on YouTube</h3><p>Performance videos, recitals &amp; competition highlights from Yorkville</p></div>
   <a class="yt-btn" href="https://www.youtube.com/channel/UC3xpCZ0aA6TNGE7lHhlWzrA/videos" target="_blank" rel="noopener">View Channel →</a>
 </div>
 
@@ -352,7 +319,6 @@ function closeLb(){document.getElementById('lightbox').classList.remove('open');
 function closeLightbox(e){if(e.target===document.getElementById('lightbox'))closeLb();}
 function lbNav(d){cur=(cur+d+photos.length)%photos.length;document.getElementById('lb-img').src=photos[cur].src;document.getElementById('lb-cap').textContent=photos[cur].cap;}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);});
-
 document.querySelectorAll('.pill').forEach(btn=>{
   btn.addEventListener('click',function(){
     document.querySelectorAll('.pill').forEach(b=>{b.className='pill off';});
