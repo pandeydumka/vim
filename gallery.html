@@ -26,6 +26,9 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .nav-links a{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(233,223,236,0.6);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--primary)}
 .nav-links a.active{color:var(--primary);border-bottom:1px solid rgba(228,181,255,0.4);padding-bottom:2px}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.nav-portal{background:transparent;border:1px solid rgba(228,181,255,0.4);color:var(--primary);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:10px 22px;border-radius:9999px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:border-color 0.2s,background 0.2s}
+.nav-portal:hover{border-color:var(--primary);background:rgba(228,181,255,0.08)}
 .nav-btn{background:linear-gradient(135deg,var(--primary),var(--primary-c));color:var(--on-primary);font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:10px 22px;border:none;border-radius:9999px;cursor:pointer;box-shadow:0 4px 20px rgba(228,181,255,0.2);transition:filter 0.2s}
 .nav-btn:hover{filter:brightness(1.1)}
 
@@ -144,7 +147,10 @@ footer a:hover{color:var(--primary)}
     <li><a href="/gallery.html" class="active">Gallery</a></li>
     <li><a href="/#contact">Contact</a></li>
   </ul>
-  <button class="nav-btn" onclick="window.location='/#booking'">Book Free Trial</button>
+  <div class="nav-actions">
+    <a class="nav-portal" href="https://dancerise-production.up.railway.app/join/vim-dance-studio" target="_blank" rel="noopener">Parent Portal</a>
+    <button class="nav-btn" onclick="window.location='/#booking'">Book Free Trial</button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -332,8 +338,8 @@ document.querySelectorAll('.pill').forEach(btn=>{
 });
 </script>
 
-<!-- Parent-facing widgets: VedaBots SMS assistant + DanceRise Parent Portal button -->
+<!-- Parent-facing widgets: VedaBots SMS assistant remains floating.
+     DanceRise Parent Portal is now an inline link in the nav above (.nav-portal), so the floating widget.js embed was removed. -->
 <script src="https://vedabots-manager-production.up.railway.app/widget.js" data-business="vim-dance-studio" data-api="https://vedabots-manager-production.up.railway.app" data-name="VIM Dance Studio"></script>
-<script src="https://dancerise-production.up.railway.app/widget.js" data-studio="vim-dance-studio"></script>
 </body>
 </html>
