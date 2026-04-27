@@ -1,8 +1,9 @@
 /* =================================================================
    VIM DANCE STUDIO — Shared Design Token System
    -----------------------------------------------------------------
-   Theme 1 "Ethereal"    — default  (purple / lavender)
-   Theme 2 "Velvet Gold" — data-theme="gold" on <html>
+   Theme 1 "Ethereal"     — default  (purple / lavender)
+   Theme 2 "Velvet Gold"  — data-theme="gold"  on <html>
+   Theme 3 "Kinetic Noir" — data-theme="noir"  on <html>
    -----------------------------------------------------------------
    HOW IT WORKS:
    • All pages link this file after Google Fonts
@@ -104,6 +105,50 @@
   --section-glow: rgba(122,68,0,0.25);
   --card-shadow: rgba(122,68,0,0.28);
   --modal-shadow-color: rgba(122,68,0,0.4);
+
+  /* Backward-compat aliases auto-cascade from primary tokens above */
+}
+
+/* ── THEME 3: Kinetic Noir (VIM Red / Electric Blue) ── */
+/*
+   Sourced directly from the official Stitch DESIGN.md export.
+   Primary: #e31e24 (VIM Red — derived from studio signage)
+   Secondary: #7ad0ff (Electric Blue — kinetic contrast)
+   Foundation: Same dark noir base as Ethereal
+*/
+[data-theme="noir"] {
+  /* Surface scale — pure noir (same dark foundation) */
+  --surface: #16121a;
+  --surface-low: #1e1a22;
+  --surface-container: #221e26;
+  --surface-high: #2d2831;
+  --surface-highest: #38333c;
+  --surface-lowest: #100d14;
+
+  /* Brand colours — VIM Red + Electric Blue */
+  --primary: #e31e24;              /* VIM Red — from studio signage */
+  --primary-dark: #93000d;         /* Deep red for gradients */
+  --secondary: #7ad0ff;            /* Electric Blue — kinetic contrast */
+  --secondary-container: #109bcf;  /* Blue container */
+  --on-secondary-container: #c3e8ff;
+  --tertiary: #ffb4ab;             /* Soft salmon — tertiary accent */
+
+  /* Text / icon colours — high contrast noir */
+  --on-surface: #e9dfeb;           /* Near white — max readability */
+  --on-surface-var: #a1a1aa;       /* Zinc-400 — body / muted text */
+  --on-primary: #ffffff;           /* White on VIM Red */
+  --outline-var: #5d3f3c;          /* Dark reddish outline */
+
+  /* Semantic tokens — red spotlight + blue accent glows */
+  --nav-bg: rgba(16,13,20,0.95);
+  --hero-overlay: rgba(16,13,20,0.92);
+  --hero-overlay-mid: rgba(16,13,20,0.4);
+  --hero-glow: rgba(227,30,36,0.55);     /* Red spotlight */
+  --hero-glow-2: rgba(122,208,255,0.18); /* Blue accent */
+  --hero-fade: #1e1a22;
+  --section-glow: rgba(227,30,36,0.18);
+  --card-shadow: rgba(227,30,36,0.28);
+  --modal-shadow-color: rgba(227,30,36,0.45);
 
   /* Backward-compat aliases auto-cascade from primary tokens above */
 }
