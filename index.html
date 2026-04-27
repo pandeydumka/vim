@@ -84,7 +84,7 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .competitive-sec::before{content:"";position:absolute;top:-80px;right:-40px;width:400px;height:400px;background:radial-gradient(circle,var(--section-glow) 0%,transparent 65%);pointer-events:none}
 .comp-content{flex:1;position:relative;z-index:2}
 .comp-img{width:280px;height:320px;border-radius:16px;flex-shrink:0;position:relative;z-index:2;box-shadow:0 32px 64px rgba(233,223,236,0.08);overflow:hidden}
-.comp-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;mix-blend-mode:screen}
+.comp-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .comp-features{list-style:none;margin:24px 0 32px;display:flex;flex-direction:column;gap:12px}
 .comp-features li{font-family:var(--sans);font-size:14px;color:var(--on-surface-var);display:flex;align-items:center;gap:12px}
 .comp-features li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--primary);flex-shrink:0}
@@ -175,7 +175,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
 
 <div id="hero" class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">✦ Yorkville’s Premier Dance Studio</div>
+    <div class="hero-eyebrow">✦ Yorkville's Premier Dance Studio</div>
     <h1>Where every dancer discovers their <em>stage</em></h1>
     <p class="hero-sub">15+ dance styles, passionate instructors, and a community that lifts every dancer up. Serving Kendall County families since 2004.</p>
     <div class="hero-btns">
@@ -221,14 +221,14 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
     <button class="btn-outline" onclick="window.location='staff.html'">Meet the Instructors →</button>
   </div>
   <div class="comp-img">
-    <img src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/full-body-dancer-pose-sitting.png" alt="VIM competitive dancer"/>
+    <img src="https://raw.githubusercontent.com/pandeydumka/vim/main/stitch-images/home_ballet_black_tutu_spotlight.jpg" alt="VIM competitive dancer — ballet in spotlight"/>
   </div>
 </div>
 
 <div id="parties" class="section parties-sec">
   <div class="eyebrow">✦ Birthday Parties &amp; Events</div>
   <div class="sec-title">Curated <em>celebration</em> experiences</div>
-  <div class="sec-sub">Transform your dancer’s birthday into a professional stage performance. We handle every detail — you just show up and celebrate.</div>
+  <div class="sec-sub">Transform your dancer's birthday into a professional stage performance. We handle every detail — you just show up and celebrate.</div>
   <p style="font-family:var(--sans);font-size:14px;color:var(--on-surface-var);line-height:1.8;margin-bottom:40px;margin-top:-24px">Weekend spots fill quickly — book early.</p>
   <div class="party-cards">
     <div class="party-card">
@@ -264,12 +264,12 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   <div class="testi-layout">
     <div class="testi-img-wrap">
       <div class="testi-img"><img src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/dancemom.png" alt="VIM Dance Moms"/></div>
-      <div class="testi-float"><p>“The most stress-free birthday we’ve ever hosted.”</p></div>
+      <div class="testi-float"><p>"The most stress-free birthday we've ever hosted."</p></div>
     </div>
     <div class="testi-quotes">
-      <div class="testi-q"><p>“My daughter has been dancing here for 5 years and I honestly can’t imagine sending her anywhere else. The instructors are incredible and it truly feels like family.”</p><cite>— Jessica M., Mom of 3 VIM dancers</cite></div>
-      <div class="testi-q"><p>“We tried two other studios before VIM. The difference is night and day — instruction quality, the warmth, the communication. This is the one.”</p><cite>— Sarah R., Dance Mom · Yorkville IL</cite></div>
-      <div class="testi-q"><p>“My daughter lights up every time we pull into the parking lot. VIM doesn’t just teach dance — they build confident, beautiful young women.”</p><cite>— Karen L., VIM parent since 2019</cite></div>
+      <div class="testi-q"><p>"My daughter has been dancing here for 5 years and I honestly can't imagine sending her anywhere else. The instructors are incredible and it truly feels like family."</p><cite>— Jessica M., Mom of 3 VIM dancers</cite></div>
+      <div class="testi-q"><p>"We tried two other studios before VIM. The difference is night and day — instruction quality, the warmth, the communication. This is the one."</p><cite>— Sarah R., Dance Mom · Yorkville IL</cite></div>
+      <div class="testi-q"><p>"My daughter lights up every time we pull into the parking lot. VIM doesn't just teach dance — they build confident, beautiful young women."</p><cite>— Karen L., VIM parent since 2019</cite></div>
     </div>
   </div>
 </div>
@@ -282,14 +282,14 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
       <p style="font-family:var(--sans);font-size:14px;color:var(--on-surface-var);margin-top:8px">Our team will contact you within 24 hours to confirm your spot.</p>
     </div>
     <div class="form-grid">
-      <div class="form-group"><label>Parent’s Name</label><input class="form-input" placeholder="Your name" type="text"/></div>
+      <div class="form-group"><label>Parent's Name</label><input class="form-input" placeholder="Your name" type="text"/></div>
       <div class="form-group"><label>Phone Number</label><input class="form-input" placeholder="(630) 555-0100" type="tel"/></div>
-      <div class="form-group"><label>Child’s Age</label><input class="form-input" placeholder="e.g. 7" type="number"/></div>
+      <div class="form-group"><label>Child's Age</label><input class="form-input" placeholder="e.g. 7" type="number"/></div>
       <div class="form-group"><label>Preferred Date</label><input class="form-input" type="date"/></div>
-      <div class="form-group full"><label>I’m interested in</label><select class="form-input"><option>Free Trial Class</option><option>The Prima — Birthday Party ($450)</option><option>The Pop Star — Birthday Party ($575)</option><option>The Grand Gala — Birthday Party ($850)</option><option>General Enrollment Info</option></select></div>
+      <div class="form-group full"><label>I'm interested in</label><select class="form-input"><option>Free Trial Class</option><option>The Prima — Birthday Party ($450)</option><option>The Pop Star — Birthday Party ($575)</option><option>The Grand Gala — Birthday Party ($850)</option><option>General Enrollment Info</option></select></div>
       <div class="form-group full">
         <button class="form-submit" onclick="alert('Thank you! We will reach out within 24 hours.\n\nOr call us now: (630) 553-6570')">Request My Free Trial →</button>
-        <p style="font-family:var(--sans);font-size:12px;color:var(--on-surface-var);text-align:center;margin-top:12px;opacity:0.7">No commitment. We’ll help you find the perfect class.</p>
+        <p style="font-family:var(--sans);font-size:12px;color:var(--on-surface-var);text-align:center;margin-top:12px;opacity:0.7">No commitment. We'll help you find the perfect class.</p>
       </div>
     </div>
   </div>
@@ -298,7 +298,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
 <div id="contact" class="section sms-sec">
   <div class="sms-content">
     <div class="eyebrow">✦ Always Available</div>
-    <div class="sec-title">Questions at 9pm?<br>We’ve got you — <em>just text us.</em></div>
+    <div class="sec-title">Questions at 9pm?<br>We've got you — <em>just text us.</em></div>
     <p class="sec-sub">Get instant answers about classes, pricing, schedules, and bookings — anytime.</p>
     <p style="font-family:var(--sans);font-size:15px;color:var(--on-surface-var);margin-bottom:28px">Text <strong style="color:var(--primary)">(630) 553-6570</strong> anytime.</p>
     <a href="sms:6305536570" class="btn-primary">Text Us Now →</a>
