@@ -153,53 +153,11 @@
   /* Backward-compat aliases auto-cascade from primary tokens above */
 }
 
-/* ── FLOATING THEME SWITCHER UI ── */
-#vim-theme-switcher {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(0,0,0,0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 6px;
-  border-radius: 9999px;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-}
-#vim-theme-switcher .ts-label {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.28);
-  padding: 0 6px 0 8px;
-  white-space: nowrap;
-}
-#vim-theme-switcher button {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 8px 18px;
-  border: none;
-  border-radius: 9999px;
-  cursor: pointer;
-  background: transparent;
-  color: rgba(255,255,255,0.35);
-  transition: all 0.25s;
-  white-space: nowrap;
-}
-#vim-theme-switcher button.ts-active {
-  background: var(--primary);
-  color: var(--on-primary);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
-}
-#vim-theme-switcher button:hover:not(.ts-active) {
-  color: rgba(255,255,255,0.85);
-  background: rgba(255,255,255,0.08);
-}
+/* ── Theme switcher UI ──
+   Footer-injected by theme-switcher.js. The link styles themselves are
+   injected dynamically by that script (so they ship together as a unit
+   and stay in sync). This file no longer carries the floating-pill
+   styles that were here pre-footer-switcher; the pill was visually
+   competing with the chat widget and looked like dev tooling on a
+   marketing site.
+*/
