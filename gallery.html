@@ -5,21 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Gallery — VIM Dance Studio Yorkville IL</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/styles.css"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#16121a;--bg-low:#1e1a22;--bg-con:#221e26;--bg-high:#2d2831;
-  --bg-highest:#38333c;--bg-lowest:#110d15;
-  --primary:#e4b5ff;--primary-c:#50007a;--secondary:#ffb0c9;
-  --on-surface:#e9dfec;--on-var:#cec3d3;--on-primary:#4e0078;
-  --outline:#4c4451;
-  --serif:'Noto Serif',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;
-}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
 *:focus{outline:none}
 
-nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
 .logo{display:flex;align-items:center;text-decoration:none}
 .logo img{height:56px;width:auto;display:block;mix-blend-mode:screen}
 .nav-links{display:flex;gap:24px;list-style:none}
@@ -33,7 +26,7 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .nav-btn:hover{filter:brightness(1.1)}
 
 .hero{padding:56px 48px 48px;position:relative;overflow:hidden;display:flex;gap:48px;align-items:flex-end;min-height:420px}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 10% 80%,rgba(80,0,122,0.45) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(124,45,76,0.2) 0%,transparent 50%)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 10% 80%,var(--hero-glow) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,var(--hero-glow-2) 0%,transparent 50%)}
 .hero-text{flex:3;position:relative;z-index:2}
 .back-link{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--secondary);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;opacity:0.8;transition:opacity 0.2s}
 .back-link:hover{opacity:1}
@@ -95,7 +88,7 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 
 .album-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .a-card{background:var(--bg-high);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s}
-.a-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(80,0,122,0.3)}
+.a-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px var(--card-shadow)}
 .a-thumb{height:110px;overflow:hidden}
 .a-thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter 0.4s,transform 0.4s}
 .a-card:hover .a-thumb img{filter:grayscale(0%);transform:scale(1.08)}
@@ -153,7 +146,6 @@ footer a:hover{color:var(--primary)}
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-text">
     <a class="back-link" href="/">← Back to Home</a>
@@ -167,12 +159,11 @@ footer a:hover{color:var(--primary)}
     </div>
     <div class="quote-float">
       <span>✦ Dance Mom Love</span>
-      <p>&ldquo;They don't just teach dance — they build confident, beautiful young women.&rdquo;</p>
+      <p>&ldquo;They don&rsquo;t just teach dance — they build confident, beautiful young women.&rdquo;</p>
     </div>
   </div>
 </div>
 
-<!-- FILTER PILLS -->
 <div class="pills" id="filter-bar">
   <button class="pill on" data-filter="all">All Moments</button>
   <button class="pill off" data-filter="groups19">2019 Company Groups</button>
@@ -181,23 +172,10 @@ footer a:hover{color:var(--primary)}
   <button class="pill off" data-filter="action18">2018 Action Shots</button>
 </div>
 
-<!-- IN MOTION FEATURE -->
 <div class="section" style="background:var(--bg)" data-section="all groups19">
-  <div class="sec-head">
-    <div>
-      <div class="badge">2019 Season</div>
-      <div class="sec-title">In <em>Motion</em></div>
-    </div>
-    <div class="sec-meta">✦ Competition Season 2019</div>
-  </div>
+  <div class="sec-head"><div><div class="badge">2019 Season</div><div class="sec-title">In <em>Motion</em></div></div><div class="sec-meta">✦ Competition Season 2019</div></div>
   <div class="perf-layout">
-    <div class="perf-main" onclick="openLightbox(0)">
-      <img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c97a6cb4-da85-4759-8201-ea0987fba425/2019_VIM_Co_Groups_08w.jpg" alt="VIM 2019 Group Performance"/>
-      <div class="perf-caption">
-        <p>VIM Competition Company</p>
-        <span>2019 Group Performance · Yorkville IL</span>
-      </div>
-    </div>
+    <div class="perf-main" onclick="openLightbox(0)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c97a6cb4-da85-4759-8201-ea0987fba425/2019_VIM_Co_Groups_08w.jpg" alt="VIM 2019 Group Performance"/><div class="perf-caption"><p>VIM Competition Company</p><span>2019 Group Performance · Yorkville IL</span></div></div>
     <div class="perf-side">
       <div class="perf-sm" onclick="openLightbox(1)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/487d8e9a-23bf-4c85-a40e-0475a723b024/2019_VIM_Co_Groups_02w.jpg" alt="VIM 2019 Group 02"/></div>
       <div class="perf-sm" onclick="openLightbox(2)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/154db76d-4755-48ca-a609-47c663186183/2019_VIM_Co_Groups_03w.jpg" alt="VIM 2019 Group 03"/></div>
@@ -207,42 +185,28 @@ footer a:hover{color:var(--primary)}
 
 <div class="divider"></div>
 
-<!-- 2019 GROUP PHOTOS GRID -->
 <div class="section" style="background:var(--bg-low)" data-section="all groups19">
-  <div class="sec-head">
-    <div>
-      <div class="badge">2019 Competition Company</div>
-      <div class="sec-title">Group <em>Photos</em></div>
-    </div>
-    <div class="sec-meta">24 photos</div>
-  </div>
+  <div class="sec-head"><div><div class="badge">2019 Competition Company</div><div class="sec-title">Group <em>Photos</em></div></div><div class="sec-meta">24 photos</div></div>
   <div class="group-grid">
-    <div class="g-card tall" onclick="openLightbox(3)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8e0704a9-9569-4975-b8d7-e7a8aa37fd17/2019_VIM_Co_Groups_04w.jpg" alt="VIM 2019 Group 04"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(4)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/80c74388-89cb-4bcb-9fa1-2f9e23e7da3e/2019_VIM_Co_Groups_05w.jpg" alt="VIM 2019 Group 05"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(5)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/d3ca6d32-66f9-4589-a618-388c333332be/2019_VIM_Co_Groups_06w.jpg" alt="VIM 2019 Group 06"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(6)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c6105c5e-ac5c-4076-9b5d-e912e2f1bfe0/2019_VIM_Co_Groups_07w.jpg" alt="VIM 2019 Group 07"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(7)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/900b5f64-703b-4ff0-b6d5-3b8f156e0664/2019_VIM_Co_Groups_09w.jpg" alt="VIM 2019 Group 09"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(8)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e14b71fc-bd4b-44e0-b610-21f1b581137a/2019_VIM_Co_Groups_10w.jpg" alt="VIM 2019 Group 10"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(9)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9db722b8-d51b-4dce-b450-8b0e0e2d1c27/2019_VIM_Co_Groups_11w.jpg" alt="VIM 2019 Group 11"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(10)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b9ea16ac-3525-474a-be20-52778977abba/2019_VIM_Co_Groups_12w.jpg" alt="VIM 2019 Group 12"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(11)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/579cac29-139b-4d8b-ba0a-d29ec324b7d7/2019_VIM_Co_Groups_13w.jpg" alt="VIM 2019 Group 13"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(12)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b351e54c-7474-44ca-be7f-39a5c009aac4/2019_VIM_Co_Groups_14w.jpg" alt="VIM 2019 Group 14"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(13)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f4c6c43f-5984-4a64-a6c8-bedfddaeb2c8/2019_VIM_Co_Groups_15w.jpg" alt="VIM 2019 Group 15"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
-    <div class="g-card" onclick="openLightbox(14)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1a270836-4e36-4942-bf54-d110dff88f25/2019_VIM_Co_Groups_16w.jpg" alt="VIM 2019 Group 16"/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card tall" onclick="openLightbox(3)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8e0704a9-9569-4975-b8d7-e7a8aa37fd17/2019_VIM_Co_Groups_04w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(4)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/80c74388-89cb-4bcb-9fa1-2f9e23e7da3e/2019_VIM_Co_Groups_05w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(5)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/d3ca6d32-66f9-4589-a618-388c333332be/2019_VIM_Co_Groups_06w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(6)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c6105c5e-ac5c-4076-9b5d-e912e2f1bfe0/2019_VIM_Co_Groups_07w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(7)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/900b5f64-703b-4ff0-b6d5-3b8f156e0664/2019_VIM_Co_Groups_09w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(8)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e14b71fc-bd4b-44e0-b610-21f1b581137a/2019_VIM_Co_Groups_10w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(9)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9db722b8-d51b-4dce-b450-8b0e0e2d1c27/2019_VIM_Co_Groups_11w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(10)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b9ea16ac-3525-474a-be20-52778977abba/2019_VIM_Co_Groups_12w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(11)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/579cac29-139b-4d8b-ba0a-d29ec324b7d7/2019_VIM_Co_Groups_13w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(12)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b351e54c-7474-44ca-be7f-39a5c009aac4/2019_VIM_Co_Groups_14w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(13)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f4c6c43f-5984-4a64-a6c8-bedfddaeb2c8/2019_VIM_Co_Groups_15w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
+    <div class="g-card" onclick="openLightbox(14)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1a270836-4e36-4942-bf54-d110dff88f25/2019_VIM_Co_Groups_16w.jpg" alt=""/><div class="g-overlay"><span>✦ 2019 Groups</span></div></div>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- PORTRAIT GRID -->
 <div class="section" style="background:var(--bg-con)" data-section="all heads18">
-  <div class="sec-head">
-    <div>
-      <div class="badge">2018 Season</div>
-      <div class="sec-title">Company <em>Portraits</em></div>
-    </div>
-    <div class="sec-meta">Hover to reveal colour</div>
-  </div>
+  <div class="sec-head"><div><div class="badge">2018 Season</div><div class="sec-title">Company <em>Portraits</em></div></div><div class="sec-meta">Hover to reveal colour</div></div>
   <div class="portrait-grid">
     <div class="p-card" onclick="openLightbox(15)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg" alt="2018 VIM Company Headshots"/><div class="p-reveal"><p>VIM Company Dancer</p><span>2018 Headshots</span></div></div>
     <div class="p-card offset" onclick="openLightbox(16)"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg" alt="2018 VIM Company Action"/><div class="p-reveal"><p>VIM Company Dancer</p><span>2018 Action</span></div></div>
@@ -253,12 +217,8 @@ footer a:hover{color:var(--primary)}
 
 <div class="divider"></div>
 
-<!-- ALL ALBUMS -->
 <div class="section" style="background:var(--bg)">
-  <div class="sec-head">
-    <div class="sec-title">Browse All <em>Albums</em></div>
-    <div class="sec-meta">4 collections</div>
-  </div>
+  <div class="sec-head"><div class="sec-title">Browse All <em>Albums</em></div><div class="sec-meta">4 collections</div></div>
   <div class="album-row">
     <div class="a-card"><div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg" alt="2019 Groups"/></div><div class="a-info"><div class="a-year">2019</div><div class="a-name">Competition Company Groups</div><div class="a-count">24 photos</div></div></div>
     <div class="a-card"><div class="a-thumb"><img src="https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg" alt="2018 Headshots"/></div><div class="a-info"><div class="a-year">2018</div><div class="a-name">Competition Company Headshots</div><div class="a-count">18 photos</div></div></div>
@@ -267,14 +227,12 @@ footer a:hover{color:var(--primary)}
   </div>
 </div>
 
-<!-- YOUTUBE STRIP -->
 <div class="yt-strip">
   <div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8C20.7 3 19.4 3 18.8 2.9 16.2 2.8 12 2.8 12 2.8S7.8 2.8 5.2 3c-.6.1-1.9.1-3 1.2C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.2.3 4.2S1.3 19.5 2.2 20.3c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.7 12 21.7 12 21.7s4.2 0 6.8-.3c.6-.1 1.9-.1 3-1.2.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.1l8.1 3.7-8.1 3.7z"/></svg></div>
   <div class="yt-text"><h3>Watch VIM on YouTube</h3><p>Performance videos, recitals &amp; competition highlights from Yorkville</p></div>
   <a class="yt-btn" href="https://www.youtube.com/channel/UC3xpCZ0aA6TNGE7lHhlWzrA/videos" target="_blank" rel="noopener">View Channel →</a>
 </div>
 
-<!-- CTA -->
 <div class="cta-sec">
   <h3>Ready to find your <em>stage?</em></h3>
   <p>Book a free trial class and see why Yorkville families have chosen VIM since 2004.</p>
@@ -286,7 +244,6 @@ footer a:hover{color:var(--primary)}
   <a href="/">← Back to vimdance.com</a>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lb-overlay" id="lightbox" onclick="closeLightbox(event)">
   <div class="lb-inner">
     <button class="lb-close" onclick="closeLb()">Close ×</button>
@@ -298,48 +255,17 @@ footer a:hover{color:var(--primary)}
 </div>
 
 <script>
-const photos = [
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c97a6cb4-da85-4759-8201-ea0987fba425/2019_VIM_Co_Groups_08w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/487d8e9a-23bf-4c85-a40e-0475a723b024/2019_VIM_Co_Groups_02w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/154db76d-4755-48ca-a609-47c663186183/2019_VIM_Co_Groups_03w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8e0704a9-9569-4975-b8d7-e7a8aa37fd17/2019_VIM_Co_Groups_04w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/80c74388-89cb-4bcb-9fa1-2f9e23e7da3e/2019_VIM_Co_Groups_05w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/d3ca6d32-66f9-4589-a618-388c333332be/2019_VIM_Co_Groups_06w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c6105c5e-ac5c-4076-9b5d-e912e2f1bfe0/2019_VIM_Co_Groups_07w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/900b5f64-703b-4ff0-b6d5-3b8f156e0664/2019_VIM_Co_Groups_09w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e14b71fc-bd4b-44e0-b610-21f1b581137a/2019_VIM_Co_Groups_10w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9db722b8-d51b-4dce-b450-8b0e0e2d1c27/2019_VIM_Co_Groups_11w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b9ea16ac-3525-474a-be20-52778977abba/2019_VIM_Co_Groups_12w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/579cac29-139b-4d8b-ba0a-d29ec324b7d7/2019_VIM_Co_Groups_13w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b351e54c-7474-44ca-be7f-39a5c009aac4/2019_VIM_Co_Groups_14w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f4c6c43f-5984-4a64-a6c8-bedfddaeb2c8/2019_VIM_Co_Groups_15w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1a270836-4e36-4942-bf54-d110dff88f25/2019_VIM_Co_Groups_16w.jpg',cap:'2019 VIM Competition Company'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg',cap:'2018 VIM Company Headshots'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg',cap:'2018 VIM Company Action Shots'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg',cap:'2018 VIM Company Groups'},
-  {src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg',cap:'2019 VIM Competition Company Groups'}
-];
+const photos=[{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c97a6cb4-da85-4759-8201-ea0987fba425/2019_VIM_Co_Groups_08w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/487d8e9a-23bf-4c85-a40e-0475a723b024/2019_VIM_Co_Groups_02w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/154db76d-4755-48ca-a609-47c663186183/2019_VIM_Co_Groups_03w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/8e0704a9-9569-4975-b8d7-e7a8aa37fd17/2019_VIM_Co_Groups_04w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/80c74388-89cb-4bcb-9fa1-2f9e23e7da3e/2019_VIM_Co_Groups_05w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/d3ca6d32-66f9-4589-a618-388c333332be/2019_VIM_Co_Groups_06w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/c6105c5e-ac5c-4076-9b5d-e912e2f1bfe0/2019_VIM_Co_Groups_07w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/900b5f64-703b-4ff0-b6d5-3b8f156e0664/2019_VIM_Co_Groups_09w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/e14b71fc-bd4b-44e0-b610-21f1b581137a/2019_VIM_Co_Groups_10w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/9db722b8-d51b-4dce-b450-8b0e0e2d1c27/2019_VIM_Co_Groups_11w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b9ea16ac-3525-474a-be20-52778977abba/2019_VIM_Co_Groups_12w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/579cac29-139b-4d8b-ba0a-d29ec324b7d7/2019_VIM_Co_Groups_13w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/b351e54c-7474-44ca-be7f-39a5c009aac4/2019_VIM_Co_Groups_14w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/f4c6c43f-5984-4a64-a6c8-bedfddaeb2c8/2019_VIM_Co_Groups_15w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1a270836-4e36-4942-bf54-d110dff88f25/2019_VIM_Co_Groups_16w.jpg',cap:'2019 VIM Competition Company'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/a8bd037f-8966-4157-8b48-9b7c8bbb21b9/2018_VIMCo_Headshots_th.jpg',cap:'2018 VIM Company Headshots'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/add8f95f-b2af-4556-8407-d422223295fa/2018_VIMCo_Action_ta.jpg',cap:'2018 VIM Company Action Shots'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/1144ac9c-1a43-455e-b63e-e36faf11cef4/2018_VIMCo_Groups_ta.jpg',cap:'2018 VIM Company Groups'},{src:'https://images.squarespace-cdn.com/content/v1/624f7792c31bb64c0e079a4c/381783f3-bf60-4a02-b4b3-4d4752fc02d8/2019_VIMCo_Groups_ta.jpg',cap:'2019 VIM Competition Company Groups'}];
 let cur=0;
 function openLightbox(i){cur=i;document.getElementById('lb-img').src=photos[i].src;document.getElementById('lb-cap').textContent=photos[i].cap;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
 function closeLb(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
 function closeLightbox(e){if(e.target===document.getElementById('lightbox'))closeLb();}
 function lbNav(d){cur=(cur+d+photos.length)%photos.length;document.getElementById('lb-img').src=photos[cur].src;document.getElementById('lb-cap').textContent=photos[cur].cap;}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);});
-document.querySelectorAll('.pill').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.pill').forEach(b=>{b.className='pill off';});
-    this.className='pill on';
-    const f=this.dataset.filter;
-    document.querySelectorAll('[data-section]').forEach(sec=>{
-      if(f==='all'||sec.dataset.section.includes(f)){sec.style.display='';}
-      else{sec.style.display='none';}
-    });
-  });
-});
+document.querySelectorAll('.pill').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('.pill').forEach(b=>{b.className='pill off';});this.className='pill on';const f=this.dataset.filter;document.querySelectorAll('[data-section]').forEach(sec=>{if(f==='all'||sec.dataset.section.includes(f)){sec.style.display='';}else{sec.style.display='none';}});});});
 </script>
 
-<!-- Parent-facing widgets: VedaBots SMS assistant remains floating.
-     DanceRise Parent Portal is now an inline link in the nav above (.nav-portal), so the floating widget.js embed was removed. -->
+<script src="/theme-switcher.js"></script>
 <script src="https://vedabots-manager-production.up.railway.app/widget.js" data-business="vim-dance-studio" data-api="https://vedabots-manager-production.up.railway.app" data-name="VIM Dance Studio"></script>
 </body>
 </html>

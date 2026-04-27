@@ -1,0 +1,160 @@
+/* =================================================================
+   VIM DANCE STUDIO — Shared Design Token System
+   -----------------------------------------------------------------
+   Theme 1 "Ethereal"    — default  (purple / lavender)
+   Theme 2 "Velvet Gold" — data-theme="gold" on <html>
+   -----------------------------------------------------------------
+   HOW IT WORKS:
+   • All pages link this file after Google Fonts
+   • Each page's local :root block is removed
+   • One edit here cascades to every page + element instantly
+   • Backward-compat aliases mean gallery.html & staff.html
+     don't need their CSS variable names changed at all
+================================================================= */
+
+/* ── THEME 1: Ethereal (purple / lavender) ── */
+:root {
+  /* Surface scale */
+  --surface: #16121a;
+  --surface-low: #1e1a22;
+  --surface-container: #221e26;
+  --surface-high: #2d2831;
+  --surface-highest: #38333c;
+  --surface-lowest: #110d15;
+
+  /* Brand colours */
+  --primary: #e4b5ff;
+  --primary-dark: #50007a;
+  --secondary: #ffb0c9;
+  --secondary-container: #7c2d4c;
+  --on-secondary-container: #ff9abc;
+  --tertiary: #f2b6cb;
+
+  /* Text / icon colours */
+  --on-surface: #e9dfec;
+  --on-surface-var: #cec3d3;
+  --on-primary: #4e0078;
+  --outline-var: #4c4451;
+
+  /* Typography */
+  --serif: 'Noto Serif', Georgia, serif;
+  --sans: 'Manrope', system-ui, sans-serif;
+
+  /* Semantic tokens for theme-sensitive components */
+  --nav-bg: rgba(22,18,26,0.92);
+  --hero-overlay: rgba(22,18,26,0.92);
+  --hero-overlay-mid: rgba(22,18,26,0.4);
+  --hero-glow: rgba(80,0,122,0.65);
+  --hero-glow-2: rgba(124,45,76,0.3);
+  --hero-fade: #1e1a22;
+  --section-glow: rgba(80,0,122,0.25);
+  --card-shadow: rgba(80,0,122,0.28);
+  --modal-shadow-color: rgba(80,0,122,0.4);
+
+  /* ── Backward-compatibility aliases ────────────────────────────
+     gallery.html and staff.html use older variable names.
+     These aliases forward them to the canonical tokens so both
+     pages respond to theme changes with zero CSS edits needed.
+  ─────────────────────────────────────────────────────────────── */
+  --bg: var(--surface);
+  --bg-low: var(--surface-low);
+  --bg-con: var(--surface-container);
+  --bg-high: var(--surface-high);
+  --bg-highest: var(--surface-highest);
+  --bg-lowest: var(--surface-lowest);
+  --primary-c: var(--primary-dark);
+  --on-var: var(--on-surface-var);
+  --outline: var(--outline-var);
+  --sec-con: var(--secondary-container);
+  --on-sec-con: var(--on-secondary-container);
+  --tertiary-col: var(--tertiary);
+}
+
+/* ── THEME 2: Velvet Gold (warm dark / amber / gold) ── */
+[data-theme="gold"] {
+  /* Surface scale — warm dark brown */
+  --surface: #15110a;
+  --surface-low: #1c1710;
+  --surface-container: #221d14;
+  --surface-high: #2c2518;
+  --surface-highest: #38301f;
+  --surface-lowest: #0e0c06;
+
+  /* Brand colours — gold / amber */
+  --primary: #ffd166;
+  --primary-dark: #7a4400;
+  --secondary: #f4a261;
+  --secondary-container: #7a3d00;
+  --on-secondary-container: #ffbe85;
+  --tertiary: #e8c547;
+
+  /* Text / icon colours */
+  --on-surface: #f0e8d8;
+  --on-surface-var: #c9b99a;
+  --on-primary: #4a2800;
+  --outline-var: #4a3e28;
+
+  /* Semantic tokens — warm gold glow variants */
+  --nav-bg: rgba(21,17,10,0.92);
+  --hero-overlay: rgba(21,17,10,0.92);
+  --hero-overlay-mid: rgba(21,17,10,0.4);
+  --hero-glow: rgba(122,68,0,0.65);
+  --hero-glow-2: rgba(122,80,0,0.3);
+  --hero-fade: #1c1710;
+  --section-glow: rgba(122,68,0,0.25);
+  --card-shadow: rgba(122,68,0,0.28);
+  --modal-shadow-color: rgba(122,68,0,0.4);
+
+  /* Backward-compat aliases auto-cascade from primary tokens above */
+}
+
+/* ── FLOATING THEME SWITCHER UI ── */
+#vim-theme-switcher {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,0,0,0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+#vim-theme-switcher .ts-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  padding: 0 6px 0 8px;
+  white-space: nowrap;
+}
+#vim-theme-switcher button {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  background: transparent;
+  color: rgba(255,255,255,0.35);
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+#vim-theme-switcher button.ts-active {
+  background: var(--primary);
+  color: var(--on-primary);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+#vim-theme-switcher button:hover:not(.ts-active) {
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.08);
+}

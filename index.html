@@ -5,16 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>VIM Dance Studio — Yorkville's Premier Dance Studio</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/styles.css"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --surface:#16121a;--surface-low:#1e1a22;--surface-container:#221e26;
-  --surface-high:#2d2831;--surface-highest:#38333c;--surface-lowest:#110d15;
-  --primary:#e4b5ff;--primary-dark:#50007a;--secondary:#ffb0c9;
-  --secondary-container:#7c2d4c;--on-secondary-container:#ff9abc;--tertiary:#f2b6cb;
-  --on-surface:#e9dfec;--on-surface-var:#cec3d3;--on-primary:#4e0078;
-  --outline-var:#4c4451;--serif:'Noto Serif',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;
-}
 html{scroll-behavior:smooth}
 body{background:var(--surface);color:var(--on-surface);font-family:var(--sans);line-height:1.6}
 *:focus{outline:none!important;box-shadow:none!important}
@@ -25,11 +18,11 @@ body{background:var(--surface);color:var(--on-surface);font-family:var(--sans);l
   display:flex;
   align-items:center;
   padding:80px 48px 80px;
-  background-color:#16121a;
+  background-color:var(--surface);
   background-image:
-    linear-gradient(to bottom, transparent 68%, #1e1a22 100%),
-    linear-gradient(to right, rgba(22,18,26,0.92) 32%, rgba(22,18,26,0.4) 58%, transparent 74%),
-    radial-gradient(ellipse at 68% 48%, rgba(80,0,122,0.65) 0%, transparent 52%),
+    linear-gradient(to bottom, transparent 68%, var(--surface-low) 100%),
+    linear-gradient(to right, var(--hero-overlay) 32%, var(--hero-overlay-mid) 58%, transparent 74%),
+    radial-gradient(ellipse at 68% 48%, var(--hero-glow) 0%, transparent 52%),
     url('https://raw.githubusercontent.com/pandeydumka/vim/main/images/full-body-dancer-green.png');
   background-blend-mode: normal, normal, normal, screen;
   background-size: 100% 100%, 100% 100%, 100% 100%, 44% auto;
@@ -46,7 +39,7 @@ body{background:var(--surface);color:var(--on-surface);font-family:var(--sans);l
 .hero-badge small{font-family:var(--sans);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--secondary);line-height:1.5}
 .hero-badge strong{font-family:var(--serif);font-size:15px;color:var(--on-surface);margin-top:6px;display:block}
 
-nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:rgba(22,18,26,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(76,68,81,0.15)}
 .nav-logo{display:flex;align-items:center;text-decoration:none}
 .nav-logo img{height:56px;width:auto;display:block;mix-blend-mode:screen}
 .nav-links{display:flex;gap:24px;list-style:none}
@@ -88,7 +81,7 @@ nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;
 .age-link{font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary);margin-top:16px;display:inline-block;border-bottom:1px solid rgba(228,181,255,0.3);padding-bottom:2px;text-decoration:none}
 
 .competitive-sec{background:var(--surface);padding:72px 48px;display:flex;gap:48px;align-items:center;position:relative;overflow:hidden}
-.competitive-sec::before{content:"";position:absolute;top:-80px;right:-40px;width:400px;height:400px;background:radial-gradient(circle,rgba(80,0,122,0.25) 0%,transparent 65%);pointer-events:none}
+.competitive-sec::before{content:"";position:absolute;top:-80px;right:-40px;width:400px;height:400px;background:radial-gradient(circle,var(--section-glow) 0%,transparent 65%);pointer-events:none}
 .comp-content{flex:1;position:relative;z-index:2}
 .comp-img{width:280px;height:320px;border-radius:16px;flex-shrink:0;position:relative;z-index:2;box-shadow:0 32px 64px rgba(233,223,236,0.08);overflow:hidden}
 .comp-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;mix-blend-mode:screen}
@@ -180,10 +173,9 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   </div>
 </nav>
 
-<!-- HERO: S1 — headline + subtext updated -->
 <div id="hero" class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">✦ Yorkville's Premier Dance Studio</div>
+    <div class="hero-eyebrow">✦ Yorkville’s Premier Dance Studio</div>
     <h1>Where every dancer discovers their <em>stage</em></h1>
     <p class="hero-sub">15+ dance styles, passionate instructors, and a community that lifts every dancer up. Serving Kendall County families since 2004.</p>
     <div class="hero-btns">
@@ -201,7 +193,6 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   <div class="trust-item"><span class="t-num">4.9★</span><span class="t-lbl">Google Rating</span></div>
 </div>
 
-<!-- CLASSES: S2 — CTA links updated to "View Class Details" -->
 <div id="classes" class="section classes-sec">
   <div class="eyebrow">✦ Classes for Every Age</div>
   <div class="sec-title">Find the <em>perfect</em> class</div>
@@ -214,7 +205,6 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   </div>
 </div>
 
-<!-- COMPETITIVE: S3 — added "next step" line after sec-sub -->
 <div id="about" class="competitive-sec">
   <div class="comp-content">
     <div class="eyebrow">✦ Performance &amp; Competition</div>
@@ -235,11 +225,10 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   </div>
 </div>
 
-<!-- PARTIES: S4 — added urgency line after sec-sub -->
 <div id="parties" class="section parties-sec">
   <div class="eyebrow">✦ Birthday Parties &amp; Events</div>
   <div class="sec-title">Curated <em>celebration</em> experiences</div>
-  <div class="sec-sub">Transform your dancer's birthday into a professional stage performance. We handle every detail — you just show up and celebrate.</div>
+  <div class="sec-sub">Transform your dancer’s birthday into a professional stage performance. We handle every detail — you just show up and celebrate.</div>
   <p style="font-family:var(--sans);font-size:14px;color:var(--on-surface-var);line-height:1.8;margin-bottom:40px;margin-top:-24px">Weekend spots fill quickly — book early.</p>
   <div class="party-cards">
     <div class="party-card">
@@ -267,7 +256,6 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   </div>
 </div>
 
-<!-- TESTIMONIALS: S5 — added rating line below sec-title -->
 <div class="section testi-sec">
   <div class="eyebrow">✦ Dance Mom Love</div>
   <div class="sec-title">What our <em>Dance Moms</em> say</div>
@@ -275,20 +263,17 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   <div style="height:40px"></div>
   <div class="testi-layout">
     <div class="testi-img-wrap">
-      <div class="testi-img">
-        <img src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/dancemom.png" alt="VIM Dance Moms"/>
-      </div>
-      <div class="testi-float"><p>"The most stress-free birthday we've ever hosted."</p></div>
+      <div class="testi-img"><img src="https://raw.githubusercontent.com/pandeydumka/vim/main/images/dancemom.png" alt="VIM Dance Moms"/></div>
+      <div class="testi-float"><p>“The most stress-free birthday we’ve ever hosted.”</p></div>
     </div>
     <div class="testi-quotes">
-      <div class="testi-q"><p>"My daughter has been dancing here for 5 years and I honestly can't imagine sending her anywhere else. The instructors are incredible and it truly feels like family."</p><cite>— Jessica M., Mom of 3 VIM dancers</cite></div>
-      <div class="testi-q"><p>"We tried two other studios before VIM. The difference is night and day — instruction quality, the warmth, the communication. This is the one."</p><cite>— Sarah R., Dance Mom · Yorkville IL</cite></div>
-      <div class="testi-q"><p>"My daughter lights up every time we pull into the parking lot. VIM doesn't just teach dance — they build confident, beautiful young women."</p><cite>— Karen L., VIM parent since 2019</cite></div>
+      <div class="testi-q"><p>“My daughter has been dancing here for 5 years and I honestly can’t imagine sending her anywhere else. The instructors are incredible and it truly feels like family.”</p><cite>— Jessica M., Mom of 3 VIM dancers</cite></div>
+      <div class="testi-q"><p>“We tried two other studios before VIM. The difference is night and day — instruction quality, the warmth, the communication. This is the one.”</p><cite>— Sarah R., Dance Mom · Yorkville IL</cite></div>
+      <div class="testi-q"><p>“My daughter lights up every time we pull into the parking lot. VIM doesn’t just teach dance — they build confident, beautiful young women.”</p><cite>— Karen L., VIM parent since 2019</cite></div>
     </div>
   </div>
 </div>
 
-<!-- BOOKING: S6 — button text + helper text added -->
 <div id="booking" class="section booking-sec">
   <div class="form-wrap">
     <div style="text-align:center;margin-bottom:40px">
@@ -297,24 +282,23 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
       <p style="font-family:var(--sans);font-size:14px;color:var(--on-surface-var);margin-top:8px">Our team will contact you within 24 hours to confirm your spot.</p>
     </div>
     <div class="form-grid">
-      <div class="form-group"><label>Parent's Name</label><input class="form-input" placeholder="Your name" type="text"/></div>
+      <div class="form-group"><label>Parent’s Name</label><input class="form-input" placeholder="Your name" type="text"/></div>
       <div class="form-group"><label>Phone Number</label><input class="form-input" placeholder="(630) 555-0100" type="tel"/></div>
-      <div class="form-group"><label>Child's Age</label><input class="form-input" placeholder="e.g. 7" type="number"/></div>
+      <div class="form-group"><label>Child’s Age</label><input class="form-input" placeholder="e.g. 7" type="number"/></div>
       <div class="form-group"><label>Preferred Date</label><input class="form-input" type="date"/></div>
-      <div class="form-group full"><label>I'm interested in</label><select class="form-input"><option>Free Trial Class</option><option>The Prima — Birthday Party ($450)</option><option>The Pop Star — Birthday Party ($575)</option><option>The Grand Gala — Birthday Party ($850)</option><option>General Enrollment Info</option></select></div>
+      <div class="form-group full"><label>I’m interested in</label><select class="form-input"><option>Free Trial Class</option><option>The Prima — Birthday Party ($450)</option><option>The Pop Star — Birthday Party ($575)</option><option>The Grand Gala — Birthday Party ($850)</option><option>General Enrollment Info</option></select></div>
       <div class="form-group full">
         <button class="form-submit" onclick="alert('Thank you! We will reach out within 24 hours.\n\nOr call us now: (630) 553-6570')">Request My Free Trial →</button>
-        <p style="font-family:var(--sans);font-size:12px;color:var(--on-surface-var);text-align:center;margin-top:12px;opacity:0.7">No commitment. We'll help you find the perfect class.</p>
+        <p style="font-family:var(--sans);font-size:12px;color:var(--on-surface-var);text-align:center;margin-top:12px;opacity:0.7">No commitment. We’ll help you find the perfect class.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SMS: S7 — headline + paragraph updated -->
 <div id="contact" class="section sms-sec">
   <div class="sms-content">
     <div class="eyebrow">✦ Always Available</div>
-    <div class="sec-title">Questions at 9pm?<br>We've got you — <em>just text us.</em></div>
+    <div class="sec-title">Questions at 9pm?<br>We’ve got you — <em>just text us.</em></div>
     <p class="sec-sub">Get instant answers about classes, pricing, schedules, and bookings — anytime.</p>
     <p style="font-family:var(--sans);font-size:15px;color:var(--on-surface-var);margin-bottom:28px">Text <strong style="color:var(--primary)">(630) 553-6570</strong> anytime.</p>
     <a href="sms:6305536570" class="btn-primary">Text Us Now →</a>
@@ -340,8 +324,7 @@ footer{background:var(--surface-lowest);padding:40px 48px;border-top:1px solid r
   <div class="footer-bottom"><span>© 2025 Virtues In Motion Dance Studio</span><span>Proudly serving Kendall County</span></div>
 </footer>
 
-<!-- Parent-facing widgets: VedaBots SMS assistant remains floating.
-     DanceRise Parent Portal is now an inline link in the nav above (.nav-portal), so the floating widget.js embed was removed. -->
+<script src="/theme-switcher.js"></script>
 <script src="https://vedabots-manager-production.up.railway.app/widget.js" data-business="vim-dance-studio" data-api="https://vedabots-manager-production.up.railway.app" data-name="VIM Dance Studio"></script>
 </body>
 </html>
